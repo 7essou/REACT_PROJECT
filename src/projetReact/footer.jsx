@@ -2,14 +2,10 @@ import { FaTwitter, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="bg-white shadow-md border-t border-gray-200 py-6 w-full">
+    <footer className="bg-white  shadow-md border-t border-gray-200 py-6 w-full">
       <div className="max-w-6xl mx-auto px-4">
         
         <div className="flex flex-col md:flex-row items-center justify-between mb-4">
-          
-          
-
-          
           <nav className="flex flex-wrap justify-center space-x-6 text-gray-600 text-sm mt-4 md:mt-0">
             <a href="#" className="hover:text-gray-900">Pricing</a>
             <a href="#" className="hover:text-gray-900">About us</a>

@@ -3,14 +3,15 @@ import NavBar from "./NavBar";
 import { useSelector ,useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 import { accept,refuse } from "./silce";
-import { Space } from "lucide-react";
+
 const ArtistNotifications = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
   const reservations = useSelector(s=>s.data.reservations).filter(e=>e.idartist==iduser)
   const users =useSelector(s=>s.data.users)
-  return (
-    <div className="max-w-7xl w-full mx-auto ">
+  return (<><NavBar/>
+    <div className=" w-full mx-auto ">
+      
       {reservations.map((r,i) => {
        return <div key={i} className="bg-white shadow-md rounded-lg p-4 mb-4 flex items-center">
           <div className="w-10 h-10 flex items-center justify-center bg-yellow-400 text-white font-bold rounded-full">
@@ -36,7 +37,7 @@ const ArtistNotifications = () => {
         </div>
       })}
     </div>
-  );
+    </>);
 };
 
 export default ArtistNotifications;

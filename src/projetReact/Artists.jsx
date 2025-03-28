@@ -9,7 +9,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 
 import { Link } from "react-router-dom";
 export default function Artists(){
-    const [page,setpage]=useState(0)
+    const [page,setpage]=useState(1)
     const [categorie,setcategorie]=useState('')
     const {iduser,nbpage,categ} =useParams()
     useEffect(()=>{
@@ -26,9 +26,11 @@ export default function Artists(){
     console.log(useSelector(s=>s.Allowed))
     const cities=useSelector(s=>s.data.cities)
     const Artists = useSelector(s=>s.data.artists).filter(e=>e.id!=iduser)
+    const [foundArt,setArt]=useState(Artists.filter(e=>e.Categorie.toLocaleLowerCase().includes(categorie.toLocaleLowerCase()) && e.Nickname.toLocaleLowerCase().includes(rech.toLocaleLowerCase()) && e.city.toLocaleLowerCase().includes(city.toLocaleLowerCase())))
     const Categories = useSelector(s=>s.data.Categories)
     const catgoriekeys=Object.keys(Categories)
-    return <div className="relative w-full  "> <NavBar/>
+
+    return<> <div className="relative w-full  "> <NavBar/>
     <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 p-4  w-[98%] relative  ">
         <select name="categorie" onChange={(e)=>setcategorie(e.target.value)} className=" border-1 bg-white border-gray-300 pl-2 rounded-md w-full size-9 "  >
           {
@@ -58,13 +60,16 @@ export default function Artists(){
     <div className="  mb-5 w-full sm:m-0  p-3   ">
          <div className="grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  space-x-4 space-y-4  justify-between  w-full  "  >
            {
-            Artists.filter(e=>e.Categorie.toLocaleLowerCase().includes(categorie.toLocaleLowerCase()) && e.Nickname.toLocaleLowerCase().includes(rech.toLocaleLowerCase()) && e.city.toLocaleLowerCase().includes(city.toLocaleLowerCase())).splice(page*11,12).map((artist,i)=>{
+            
+            Artists.filter(e=>e.Categorie.toLocaleLowerCase().includes(categorie.toLocaleLowerCase()) && e.Nickname.toLocaleLowerCase().includes(rech.toLocaleLowerCase()) && e.city.toLocaleLowerCase().includes(city.toLocaleLowerCase())).map((artist,i)=>{
                 
                 return <ArtistsCart artist={artist} key={i} />
             })
            }
     </div> 
     </div>
-    <Footer/>
+    <Footer/> 
     </div>
+   
+    </>
 }

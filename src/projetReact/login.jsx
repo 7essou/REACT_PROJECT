@@ -16,10 +16,11 @@ export default function LoginForm() {
     console.log(e)
   })
 
-  const clickHandler = async ()=>{
-   const reponse= await dispatch(login(user))   
-    if(reponse && users.find(e=>e.email==user.email)){
+  const clickHandler = ()=>{
+       
+    if( users.find(e=>e.email==user.email && e.password==user.password)){
       navto(`/artists/user/${users.find(e=>e.email==user.email).id}`)
+      dispatch(login(user)) 
     }
     else{
     setmsg('Email or Password inccorect')

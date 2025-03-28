@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { annuler,terminer } from "./silce";
 import { useParams } from "react-router-dom";
+import Footer from "./footer";
+import NavBar from "./NavBar";
 const ReservationClient = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
@@ -9,7 +11,9 @@ const ReservationClient = () => {
   const artists= useSelector(s=>s.data.artists)
  
   return (
-    <div className="max-w-8xl w-full mx-auto p-6">
+
+    <div className=" w-full mx-auto ">
+      <NavBar/>
       <h2 className="text-2xl font-bold mb-4">Reservation client</h2>
 
       {reservations.map((r,i) => {
@@ -17,7 +21,7 @@ const ReservationClient = () => {
           key={i}
           className="bg-yellow-50 border border-yellow-100 rounded-lg p-4 flex justify-between items-center mb-4"
         >
-          {/* Left - Notification Icon & Text */}
+       
           <div className="flex items-center space-x-4">
             <span className="text-gray-700 text-xl">🔔</span>
             <div>
@@ -27,7 +31,7 @@ const ReservationClient = () => {
             </div>
           </div>
 
-          {/* Right - Buttons */}
+        
          <div className="flex space-x-2">{(r.etat=='') && 
             <button
             name="annuler"
@@ -36,13 +40,14 @@ const ReservationClient = () => {
             >
               annuler
             </button>}
-            <button
+            {(r.etat=='done') ?'': <button
             name="terminer"
               onClick={(e)=>dispatcher(terminer(r.id))}
               className="bg-yellow-600 text-white px-3 py-1 rounded"
             >
               terminer
-            </button>
+            </button> }
+           
           </div>
         </div>
 })}

@@ -9,7 +9,6 @@ const slice = createSlice({
     name:'artist slice',
     initialState:{
         data:data,
-        login_R:'',
         Allowed:false,
         nbId:3,
         idreviews:6,
@@ -17,12 +16,7 @@ const slice = createSlice({
     },
     reducers:{
     login:(state,action)=>{
-        let user=state.data.users.find(user=>user.email==action.payload.email && user.password==action.payload.password)
-        if(user){
             state.Allowed=true
-           state.login_R=user.id
-           console.log(state.login_R)
-        }
     },
     logout:(state,action)=>{
        state.Allowed=action.payload
