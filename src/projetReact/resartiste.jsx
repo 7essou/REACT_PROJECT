@@ -13,8 +13,8 @@ const ArtistNotifications = () => {
     <div className=" w-full mx-auto ">
       
       {reservations.map((r,i) => {
-       return <div key={i} className="bg-white shadow-md rounded-lg p-4 mb-4 flex items-center">
-          <div className="w-10 h-10 flex items-center justify-center bg-yellow-400 text-white font-bold rounded-full">
+       return <div key={i} className="bg-white shadow-sm rounded-lg p-4 mb-4 flex items-center">
+          <div className="w-10 h-10 size-10 text-center text-neutral-800 bg-[#EEB866FF] rounded-full mr-2 pt-1 text-xl">
             {users.find(e=>e.id==r.idclient).first_name[0].toUpperCase()}
           </div>
           <div className="ml-4 flex-1">
@@ -24,13 +24,13 @@ const ArtistNotifications = () => {
           </div>
          {(r.etat=='')?<div><button 
            onClick={()=>dispatcher(refuse(r.id))}
-            className="bg-red-500 text-white px-3 py-1 rounded-lg mx-1"
+            className="bg-[#EEB866FF] text-white px-3 py-1 rounded-md mx-1"
           >
             Refuser
           </button>
           <button 
             onClick={()=>dispatcher(accept(r.id))}
-            className="bg-lime-500 text-white px-3 py-1 rounded-lg"
+            className="bg-[#EEB866FF] text-white px-3 py-1 rounded-md"
           >
             Accepter
           </button></div>:<p className="text-gray-600 text-sm">{r.etat}</p>} 

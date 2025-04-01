@@ -17,13 +17,13 @@ export default function NavBar(){
     const dispatch=useDispatch()
     const logouHandler=()=>{
       dispatch(logout(false))
-      navto('')
+      navto('/')
     }
-    return  <nav className="flex  gap-4 relative shadow-md   w-full p-2 pb-0 mb-1  border-b border-neutral-200 ">
+    return  <nav className="flex  gap-4 relative shadow-sm bg-white z-10  w-full p-2 pb-0 mb-1   border-b border-neutral-200 ">
         <img src="logo.png" className="size-10 " alt="" /><h1 className="text-[25px] text-[Gill Sans] mb-4 " >GetArt</h1>
         <ul className=" grid grid-cols-3 gap-1 mt-2 md:ml-30    " onClick={()=>{seturl(window.location.pathname)}}>
          <li className={`md:w-30 transition-all ease-out duration-75   hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold   ${(url=='/' || url==`/${undefined} ` ||url==`/${iduser}` )?'border-b-4 font-bold text-[#EEB866FF]':''}  border-[#EEB866FF] text-center `}><Link to={`/${iduser}`}>Accuel</Link></li>
-         <li className={`md:w-30 transition-all ease-out hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold ${url.includes('/artists')?'border-b-4 font-bold text-[#EEB866FF]':''}  border-[#EEB866FF] text-center `}><Link to={`/artists/user/${iduser}`}>Artists</Link></li>
+         <li className={`md:w-30 transition-all ease-out hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold ${url.includes('/artists')?'border-b-4 font-bold text-[#EEB866FF]':''}  border-[#EEB866FF] text-center `}><Link to={`/artists/user/${iduser}/page/1`}>Artists</Link></li>
         {artiste&& url!='/'&& Allowed &&<li className={`md:w-30 transition-all ease-out hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold ${url.includes('/profile')?'border-b-4 font-bold text-[#EEB866FF]':''}  border-[#EEB866FF] text-center `}><Link to={`/profile/${iduser}`}>Myprofile</Link></li> }
         </ul>
         <div className="flex gap-4 absolute  right-0 w-1/2">

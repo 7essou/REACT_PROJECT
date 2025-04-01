@@ -14,7 +14,7 @@
     zip: "",
     country: "",
     billingSame: false,
-    paymentMethod: "card", 
+    paymentMethod: "", 
 },
 
 {
@@ -31,7 +31,7 @@
     zip: "",
     country: "",
     billingSame: false,
-    paymentMethod: "card", 
+    paymentMethod: "", 
 },
 {
     id:3,
@@ -47,16 +47,31 @@
     zip: "",
     country: "",
     billingSame: false,
-    paymentMethod: "card", 
+    paymentMethod: "", 
+},
+{
+    id:4,
+    first_name:'rached',
+    Last_name:'ahmed',
+    phone:'0888888888',
+    email:'rached@gmail.com',
+    password :'0000000',
+    nameOnCard: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    zip: "",
+    country: "",
+    billingSame: false,
+    paymentMethod: "", 
 },],
- 
- artists :[
-    {
+ artists :[  
+      {
         id:1,
         Nickname:'7essou',
         Categorie:'clothes Customizing',
         city:'Toufite',
-        Profil_img:'',
+        Profil_img:'me.jpg',
         desc_img:'clothes.jpg',
         Adresse:'Istghrghor Tounfite',
         rating:1,
@@ -65,204 +80,7 @@
         prix:50,
       
         
-    },
-    {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },   {
-        id:1,
-        Nickname:'7essou',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:1,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-        
-    },
+    },   
     {
         id:2,
         Nickname:'Mohamed',
@@ -275,8 +93,6 @@
         about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
         Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
         prix:50,
-      
-
     },
     {
         id:3,
@@ -284,7 +100,7 @@
         Categorie:'portrait',
         city:'Toufite',
         Profil_img:'me.jpg',
-        desc_img:'clothes1.jpg',
+        desc_img:'portrait.jpg',
         Adresse:'Istghrghor Tounfite',
         rating:3.2,
         about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
@@ -294,40 +110,12 @@
 
     },
     {
-        id:3,
-        Nickname:'rr',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
         Profil_img:'me.jpg',
-        desc_img:'shoes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:3.2,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-
-    },    {
-        id:3,
-        Nickname:'ee',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'me.jpg',
-        desc_img:'clothes.jpg',
-        Adresse:'Istghrghor Tounfite',
-        rating:3.2,
-        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
-        prix:50,
-      
-
-    },    {
-        id:3,
-        Nickname:'dd',
-        Categorie:'clothes Customizing',
-        city:'Toufite',
-        Profil_img:'me.jpg',
-        desc_img:'clothes1.jpg',
+        desc_img:'portrait.jpg',
         Adresse:'Istghrghor Tounfite',
         rating:3.2,
         about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
@@ -336,7 +124,414 @@
       
 
     },
-  
+    {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    },   {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    },   {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    },   {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    },
+    {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    }, {
+        id:4,
+        Nickname:'Rachiied',
+        Categorie:'clothes',
+        city:'fes',
+        Profil_img:'me.jpg',
+        desc_img:'portrait.jpg',
+        Adresse:'Istghrghor Tounfite',
+        rating:3.2,
+        about:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        Service_desc:"i will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desindi will costumize your clothes with your favorit desind",
+        prix:50,
+      
+
+    },
 ],
 reservations:[
     {
@@ -419,4 +614,5 @@ Categories:{
 ],
   
 }
+
 

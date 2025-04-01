@@ -17,23 +17,23 @@ export default function Accules(){
     <div className=" bg-white w-100 snap-center scroll-ml-6  shadow-[0px_0px_1px_rgba(0,0,0,0.25)] rounded-md md:w-60  lg:w-80  xl:w-100 m-1 h-50    "><img src="/shoes.jpg" className="float-right w-[50%] h-[90%] m-2 rounded-md " alt="" />
     <h1 className="xl:text-xl md:text-lg   font-bold   m-4 ml-4 ">Custom Shoes</h1>
     <p className="break-words lg:text-sm md:text-[10px] text-[#9095A0FF] lg:w-30 ml-4 xl:w-40 xl:leading-7">Check out the best artists to customize you shoes . </p>
-    <Link to={`/artists/user/${iduser}/categorie/shoes `} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2  px-6 py-1    relative top-5 lg:top-8 md:top-6  left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer" >Check out</Link>
+    <Link to={`/artists/user/${iduser}/categorie/shoes/page/1 `} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2  px-6 py-1    relative top-5 lg:top-8 md:top-6  left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer" >Check out</Link>
     </div>
     <div className=" bg-white w-100 snap-center scroll-ml-6  shadow-[0px_0px_1px_rgba(0,0,0,0.25)] rounded-md md:w-60 lg:w-80  xl:w-100 m-1 h-50   "><img src="/clothes1.jpg" className="float-right w-[50%] h-[90%] m-2 rounded-md " alt="" />
     <h1 className="xl:text-xl md:text-lg   font-bold   m-4 ml-4 ">Custom clothes</h1>
     <p className="break-words lg:text-sm md:text-[10px] text-[#9095A0FF] lg:w-30 ml-4 xl:w-40 xl:leading-7">Check out the best artists to customize you clothes . </p>
-    <Link to={`/artists/user/${iduser}/categorie/clothes`} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2 px-6 py-1   relative top-5 lg:top-3 md:top-6 left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer " >Check out</Link>
+    <Link to={`/artists/user/${iduser}/categorie/clothes/page/1`} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2 px-6 py-1   relative top-5 lg:top-3 md:top-6 left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer " >Check out</Link>
     </div>
     <div className=" bg-white w-100 snap-center scroll-ml-6  shadow-[0px_0px_1px_rgba(0,0,0,0.25)] rounded-md md:w-60 lg:w-80  xl:w-100 m-1 h-50   "><img src="/portrait.jpg" className="float-right w-[50%] h-[90%] m-2 rounded-md " alt="" />
     <h1 className="xl:text-xl md:text-lg   font-bold   m-4 ml-4 ">Get portrait</h1>
     <p className="break-words lg:text-sm md:text-[10px] text-[#9095A0FF] lg:w-30 ml-4 xl:w-40 xl:leading-7">Get your self a portrait with our artists . </p>
-    <Link to={`/artists/user/${iduser}/categorie/portrait`} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2 px-6 py-1   relative top-10 lg:top-8 md:top-6 left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer " >Check out</Link>
+    <Link to={`/artists/user/${iduser}/categorie/portrait/page/1`} className="border-1 border-solid border-[#EEB866FF] text-[#EEB866FF] rounded-sm lg:py-1 md:py-0.5  lg:px-6 md:px-2 px-6 py-1   relative top-10 lg:top-8 md:top-6 left-4  hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer " >Check out</Link>
     </div>
     
 </div>
-<div><h1 className="text-[30px] m-2 md:text-2xl lg:text-4xl xl:text-6xl font-bold  flex items-center justify-center " >Explore Our Services</h1>
+<div><h1 className="text-[30px] m-2 mt-6 md:text-2xl lg:text-4xl xl:text-6xl font-bold  flex items-center justify-center " >Explore Our Services</h1>
 <p className="text-[#9095A0FF] text-[10px] md:text-xl lg:text-2xl  flex items-center justify-center " >Discover our range of customizable clothing and shoe design options, crafted</p>
-<p className="text-[#9095A0FF] mb-4 text-[10px] md:text-xl lg:text-2xl flex items-center justify-center " > to fit your unique style and needs</p></div>
+<p className="text-[#9095A0FF] mb-8 text-[10px] md:text-xl lg:text-2xl flex items-center justify-center " > to fit your unique style and needs</p></div>
 
 
 

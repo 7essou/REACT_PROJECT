@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { addreview ,addreservation} from "./silce";
 import NavBar from "./NavBar";
@@ -81,8 +81,10 @@ return  <div>
           <button onClick={()=>setvisible(false)} className="m-auto bg-[#EEB866FF] w-[20%]  mt-4 absolute top-[70%] left-[50%] py-2 rounded-md font-bold text-white hover:cursor-pointer ">Annuler</button>
           <button onClick={addReservation} className="m-auto bg-[#EEB866FF] w-[20%]  mt-4 absolute top-[70%] left-[75%] py-2 rounded-md font-bold text-white hover:cursor-pointer " >Add</button>
   </div>
+
+
     <div className={`md:flex p-2  ${visible ?"blur-sm":''}  `}>
-      <div className="border-1 border-gray-200 shadow-md rounded-md w-full  mt-1  md:w-[50%]    " >
+      <div className="border-1 border-gray-200 shadow-sm  rounded-md w-full  mt-1  md:w-[50%]    " >
         <div className="grid grid-cols-3 ">
              <div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}><img className="rounded-full" src={`/${Artist['Profil_img']}`} alt="" /></div>
              <div className="space-y-0.5" >
@@ -109,16 +111,19 @@ return  <div>
 
 
         <div className="m-4 mt-8 ">
-            <h1 className=" font-bold  text-neutral-600  " >Reviews</h1>
+        <div className="flex justify-between" > 
+  <h1 className=" font-bold text-neutral-600 " >Reviews</h1> 
+  <Link className="m-4  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}/AllReviews`}>see all {`>`}</Link>   
+  </div>
             <div className="grid grid-cols-2 gap-2 mt-4 " >
                 
                     {
                        Reviews.filter(e=>e.idArtist==idArtist).splice(0,2).map((r,i)=>{
-                        return<div  key={i} className="bg-neutral-100 rounded-md " > <div  className="grid grid-cols-2">
+                        return<div  key={i} className="bg-neutral-100 rounded-md " > <div  className="flex justify-between mr-2">
                         <div> 
-                            <div className="m-4 bg-[#EEB866FF] rounded-full size-6 float-left flex flex-col justify-center text-center text-[10px] " >{Users.find(e=>e.id==r.idClient).first_name[0].toUpperCase()}</div>
+                            <div className="m-1.5 bg-[#EEB866FF] rounded-full size-6 float-left flex flex-col justify-center text-center text-[10px] " >{Users.find(e=>e.id==r.idClient).first_name[0].toUpperCase()}</div>
                             <h4 className="text-[9px]  text-neutral-600 font-bold mt-1">{Users.find(e=>e.id==r.idClient).first_name}</h4>
-                            <p className="text-[8px] text-neutral-600 " >{Users.find(e=>e.id==r.idClient).email}</p>
+                            <p className="text-[8px] text-neutral-600 ml-2 " >{Users.find(e=>e.id==r.idClient).email}</p>
                         </div>
                         <ReactStars size={10} value={r.rating} edit={false} classNames="mt-1 ml-5 " />
                     </div> <p className="m-2 mt-0 text-[8px] text-neutral-600 " >{r.description}</p>
@@ -131,22 +136,22 @@ return  <div>
         </div>
        
          <div >
-         <div className="grid grid-cols-3 relative  gap-1 mt-8 ml-4 " >
+         <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3  relative  gap-1 mt-8 ml-2 " >
            <div className="col-span-2 " >
              <div className="m-2 bg-[#EEB866FF] rounded-full size-10 float-left flex felx-col justify-center text-center pt-2 " >{(Users.find(e=>e.id==iduser))? Users.find(e=>e.id==iduser).first_name[0].toUpperCase():'A'} </div>
              <input name="description" onChange={changeHandler} readOnly={!Allowed && !reservations}  className=" bg-neutral-100 mt-2 w-3/4 h-10 rounded-3xl border-1 text-center border-neutral-400  text-[10px] placeholder:text-[10px]    " placeholder="Write a comment.." type="text" />
            </div>
  
          <ReactStars name='rating' onChange={(e)=>setreview({...review,rating:e})} size={25}  classNames={` relative right-6 top-1 `}  />
-         <button onClick={clickHandler} className={`absolute right-[5%] bottom-1 ${(!Allowed && !reservations)?'cursor-not-allowed pointer-events-none':'hover:cursor-pointer'} bg-[#EEB866FF] w-[10%] py-3  mt-6  rounded-md font-bold  text-white  `} >Add</button>
+         <button onClick={clickHandler} className={`absolute right-[2%] bottom-1 ${(!Allowed && !reservations)?'cursor-not-allowed pointer-events-none':'hover:cursor-pointer'} bg-[#EEB866FF] w-[10%] py-3  mt-6  rounded-md font-bold  text-white  `} >Add</button>
 
        </div>
        </div>
         
       </div> 
 
-      <div className=" relative flex   flex-col border-1 border-gray-200 shadow-md rounded-md w-full md:ml-4  md:w-[50%]     " >
-           <div className={` bg-cover w-full rounded-md h-70`} ><img className="w-full h-full rounded-md" src={`/${Artist.desc_img}`} alt="" /></div>
+      <div className=" relative flex   flex-col border-1 border-gray-200 shadow-sm rounded-md w-full md:ml-4  md:w-[50%]     " >
+           <div className={` bg-cover w-full rounded-md h-70`} ><img className="w-full h-full rounded-t-md" src={`/${Artist.desc_img}`} alt="" /></div>
     
       <div className="flex relative  m-3" ><p className="font-bold text-4xl   text-[#EEB866FF]" >{Artist.prix}$</p><p className="mt-4  text-neutral-400" >/pice</p> <button onClick={resercheck}  className=" bg-[#EEB866FF] w-[20%] py-2  absolute left-[80%]  rounded-md font-bold text-white hover:cursor-pointer " >Reserve</button></div>  
       <div className=" mt-2 ">
@@ -155,13 +160,16 @@ return  <div>
      
     </div>
   </div>  
-  <div className={`${visible ?"blur-sm":''}`} >   
-  <h1 className="m-4 font-bold text-2xl text-neutral-900" >my work</h1>    
-  <div className="grid grid-cols-3   gap-4 my-6 mx-4 " >
+  <div className={`${visible ?"blur-sm":''} `} >  
+  <div className="flex justify-between" > 
+  <h1 className="m-4 font-bold text-2xl text-neutral-900" >my work</h1> 
+  <Link className="m-4  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}/AllImages`}>see all {`>`}</Link>   
+  </div>
+  <div className="grid grid-cols-3   gap-1 mb-1 mx-1 " >
     {
      imgs.splice(0,3).map((e,i)=>{
      
-      return <div key={i} className={` h-1/2 shadow-md  `} ><img className="rounded-sm" src={`/${e.img}`} alt="" /></div>
+      return <div key={i} className={` h-1/2 shadow-sm  `} ><img className="rounded-sm" src={`/${e.img}`} alt="" /></div>
 
      })
     }

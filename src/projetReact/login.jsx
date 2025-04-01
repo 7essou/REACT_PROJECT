@@ -19,7 +19,7 @@ export default function LoginForm() {
   const clickHandler = ()=>{
        
     if( users.find(e=>e.email==user.email && e.password==user.password)){
-      navto(`/artists/user/${users.find(e=>e.email==user.email).id}`)
+      navto(`/artists/user/${users.find(e=>e.email==user.email).id}/page/1`)
       dispatch(login(user)) 
     }
     else{

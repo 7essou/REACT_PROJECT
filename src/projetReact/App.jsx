@@ -11,15 +11,16 @@ import ArtistNotifications from "./resartiste";
 import ReservationClient from "./reservation";
 import BecomeArtistForm from "./becomeArtist";
 import PaymentForm from "./payement";
+import AllImages from "./AllImages";
+import AllReviews from "./AllReviews";
 export default function App(){
-    return<div className="flex flex-col min-h-screen"> 
+    return<div className=""> 
     <Routes>
         <Route path="" element={<Accules/>}/ >
         <Route path="/:iduser" element={<Accules/>}/ >
         <Route path="/artists/" element={<Artists/>}/ >
         <Route path="/artists/categorie/:categ" element={<Artists/>}/ >
-        <Route path="/artists/user/:iduser/categorie/:categ" element={<Artists/>}/ >
-        <Route path="/artists/categorie/:categ/page/:nbpage" element={<Artists/>}/ >
+        <Route path="/artists/user/:iduser/categorie/:categ/page/:nbpage" element={<Artists/>}/ >
         <Route path="/artists/user/:iduser" element={<Artists/>}/ >
         <Route path="/artists/user/:iduser/page/:nbpage" element={<Artists/>}/ >
         <Route path="/artists/page/:nbpage" element={<Artists/>}/ >
@@ -31,6 +32,8 @@ export default function App(){
         <Route path="/reservations/:iduser" element={<ReservationClient/>}/ >
         <Route path="/FormArtiste/:iduser" element={<BecomeArtistForm/>}/ >
         <Route path="/FormArtiste/formpay/:iduser" element={<PaymentForm/>}/ >
+        <Route path="/detailArtist/:idArtist/user/:iduser/AllImages" element={<AllImages/>}/>
+        <Route path="/detailArtist/:idArtist/user/:iduser/AllReviews" element={<AllReviews/>}/>
     </Routes>
 
     </div>
