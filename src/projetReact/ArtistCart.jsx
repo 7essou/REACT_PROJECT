@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 export default function ArtistsCart({artist}){
 const {iduser}=useParams()
-return  <div className=" flex flex-col   mb-2 mr-2  border-1 bg-white shadow-sm  border-gray-200 rounded-md   " >
+return  <div className="  flex flex-col   mb-2 mr-2  border-1 bg-white shadow-sm  border-gray-200 rounded-md   " >
     <Link to={`/detailArtist/${artist.id}/user/${iduser}`} ><img src={`/${artist.desc_img}`} className="w-full rounded-t-md h-45  " alt="" /></Link>
 <div className="flex relative" >
     <img className={` size-12  relative bottom-6  bg-cover border-gray-500  rounded-full text-center ml-4 inline-block `} src={`/${artist.Profil_img}`} alt="" />

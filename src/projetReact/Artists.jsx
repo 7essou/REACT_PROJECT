@@ -67,7 +67,7 @@ export default function Artists(){
     </div>
     
     <div className="  mb-5 w-full sm:m-0  p-3   ">
-         <div className="grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  space-x-4 space-y-4  justify-between  w-full  "  >
+         <div className="grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-3   space-y-4  justify-between  w-full  "  >
            {
             (Artists.length>0)?
             Artists.splice((nbpage-1)*8,8).map((artist,i)=>{
