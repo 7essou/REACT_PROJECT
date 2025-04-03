@@ -7,9 +7,9 @@ export default function PaymentForm() {
   const dispatcher=useDispatch()
   const navto=useNavigate()
   console.log(iduser)
- const user=useSelector(s=>s.data.users).find(e=>e.id==iduser)
+ const user=useSelector(s=>s.data.users).find(e=>e.email==iduser)
   const [formData, setFormData] = useState(user);
-
+ const [msg,setmsg]=useState()
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -19,12 +19,17 @@ export default function PaymentForm() {
   };
 
   const  clickHandlet=()=>{
+    if((formData.paymentMethod =='card'&&(formData.cvv==""||formData.expiryDate==''||formData.cardNumber==''||formDatanameOnCard==''))){
+       setmsg('All fields are required')
+    }
+    else if (formData.paymentMethod =='paypal'&& formData.paypal==''){ setmsg('All fields are required')}
+    else{
       dispatcher(addPayInfo(formData))
-      navto(`/artists/user/${iduser}`)
+      navto(`/login`)}
     }
   return (
-    <div className="bg-neutral-100 pb-25">
-    <div className="max-w-lg mx-auto bg-white p-6 mt-20  rounded-lg shadow-md">
+    <div className=" pb-25">
+    <div className="max-w-lg mx-auto bg-gray-100 p-6 mt-20  rounded-lg shadow-md">
       <h2 className="text-xl font-bold mb-2 text-gray-800">
         Payment information
       </h2>
@@ -77,7 +82,7 @@ export default function PaymentForm() {
             name="nameOnCard"
             value={formData.nameOnCard}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full bg-white border p-2 rounded mt-1"
             placeholder="Enter name on card"
           />
         </div>
@@ -88,7 +93,7 @@ export default function PaymentForm() {
             name="cardNumber"
             value={formData.cardNumber}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full  bg-white border p-2 rounded mt-1"
             placeholder="Enter card number"
           />
         </div>
@@ -102,7 +107,7 @@ export default function PaymentForm() {
             name="expiryDate"
             value={formData.expiryDate}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full  bg-white border p-2 rounded mt-1"
             placeholder="MM/YY"
           />
         </div>
@@ -113,7 +118,7 @@ export default function PaymentForm() {
             name="cvv"
             value={formData.cvv}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full  bg-white border p-2 rounded mt-1"
             placeholder="Enter CVV"
           />
         </div>
@@ -123,7 +128,7 @@ export default function PaymentForm() {
             name="paypal"
             value={formData.paypal}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full  bg-white border p-2 rounded mt-1"
             placeholder="Paypal adresse"
           /> </div>}
       <div className="mt-4 flex items-center">
@@ -147,7 +152,7 @@ export default function PaymentForm() {
             name="zip"
             value={formData.zip}
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1"
+            className="w-full  bg-white border p-2 rounded mt-1"
             placeholder="Input code"
           />
         </div>
@@ -160,13 +165,12 @@ export default function PaymentForm() {
             className="w-full border p-2 rounded mt-1"
           >
             <option value="">Select country/region</option>
-            <option value="us">United States</option>
-            <option value="fr">France</option>
-            <option value="uk">United Kingdom</option>
+            <option value="mr" selected >Morroco</option>
           </select>
         </div>
       </div>
-
+  
+  <p>{msg}</p>
       
       <button onClick={clickHandlet} className="w-full mt-6 bg-yellow-500 text-white p-3 rounded hover:bg-yellow-600">
         Save information

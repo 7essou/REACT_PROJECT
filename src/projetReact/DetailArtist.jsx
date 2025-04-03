@@ -15,8 +15,9 @@ const Allowed = useSelector(s=>s.Allowed)
 const Artist=useSelector(s=>s.data.artists).find(e=>e.id==idArtist)
 const Users=useSelector(s=>s.data.users)
 const reservations = useSelector(s=>s.data.reservations).find(e=>e.idclient==iduser && e.idartist==idArtist)
-const Reviews=useSelector(s=>s.data.reviews)
-const imgs=useSelector(s=>s.data.WorkImg).filter(e=>e.id==idArtist)
+const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==idArtist)
+const [rating,set]=useState(parseInt( Reviews.reduce((rating,review)=>{ return rating+=review.rating},0)/Reviews.length))
+const imgs=useSelector(s=>s.data.images).filter(e=>e.idArtist==idArtist)
 console.log(useSelector(s=>s.data.Allowedsafiy))
 const[review,setreview]=useState({
         id:'jkj',
@@ -40,17 +41,10 @@ setreview({...review,[name]:value})
 }
 const clickHandler= async()=>{
  const r =await dispatcher(addreview(review))
- if(r){
-  alert('The review has been add')
-  
- }
 }
 const addReservation= async ()=>{
 const r= await dispatcher(addreservation(reserv))
 setvisible(false)
-if(r){
-  alert('The reservation has been add')
- }
 }
 const resercheck = ()=>{
   if(Allowed){
@@ -92,8 +86,8 @@ return  <div>
                 <p className="text-[#9095A0FF] ml-4 mb-2 text-[12px]" >{Users.find(e=>e.id==idArtist).email}</p>
                 <div className="flex flex-col justify-baseline align-middle bg-gray-200 w-18 h-12 pb-1 ml-6 rounded-md " >
                     <p className="text-[10px] text-center  text-neutral-600" >RATING</p>
-                    <p className="text-[10px] text-center  text-neutral-600 " >{parseInt(Artist.rating)}</p>
-                   <ReactStars size={13} value={parseInt( Artist.rating)} edit={false} classNames="m-auto " />
+                    <p className="text-[10px] text-center  text-neutral-600 " >{(rating)?rating:'0'}</p>
+                   <ReactStars size={13} value={rating} edit={false} classNames="m-auto " />
                 </div>
             </div>
              <div className="relative top-20 right-10">
@@ -118,7 +112,7 @@ return  <div>
             <div className="grid grid-cols-2 gap-2 mt-4 " >
                 
                     {
-                       Reviews.filter(e=>e.idArtist==idArtist).splice(0,2).map((r,i)=>{
+                       Reviews.splice(0,2).map((r,i)=>{
                         return<div  key={i} className="bg-neutral-100 rounded-md " > <div  className="flex justify-between mr-2">
                         <div> 
                             <div className="m-1.5 bg-[#EEB866FF] rounded-full size-6 float-left flex flex-col justify-center text-center text-[10px] " >{Users.find(e=>e.id==r.idClient).first_name[0].toUpperCase()}</div>

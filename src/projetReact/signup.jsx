@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function SignupForm() {
   const dispatch=useDispatch()
   const navto=useNavigate()
+  const [msg,setmsg]=useState('')
   const [formData, setFormData] = useState({
     id:'',
     first_name:'',
@@ -24,9 +25,15 @@ export default function SignupForm() {
     paymentMethod: "card", 
   });
   
-  const ClickHandler=()=>{
-    dispatch(singin(formData))
-    navto(`/login`)
+  const ClickHandler=()=>{ 
+    if(formData.first_name=="" || formData.Last_name==""||formData.password==""||formData.email==""){
+    setmsg('All fields re required !')
+    }
+    else{
+      dispatch(singin(formData))
+    navto(`/FormArtiste/formpay/${formData.email}`)
+    }
+    
   }
 
   const handleChange = (e) => {
@@ -39,8 +46,8 @@ export default function SignupForm() {
   };
 
   return (
-    <div className="flex justify-center item-center   bg-gray-100 w-full h-full">
-      <div className="w-full max-w-md bg-white mt-20 p-8 rounded-lg shadow-md">
+    <div className="flex justify-center item-center   w-full h-full">
+      <div className="w-full h-full max-w-md bg-gray-200 mt-20 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center text-black">Sign up</h2>
 
         
@@ -90,8 +97,9 @@ export default function SignupForm() {
             onChange={handleChange}
             className="w-full border p-2 rounded bg-gray-100 text-black"
           />
+          <p className="text-red-600" >{msg}</p>
           <button onClick={ClickHandler} className="w-full bg-yellow-500 text-white p-3 rounded-lg font-semibold">
-            Sign up 
+            Next 
           </button>
         </form>
 

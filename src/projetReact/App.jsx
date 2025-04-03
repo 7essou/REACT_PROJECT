@@ -13,7 +13,9 @@ import BecomeArtistForm from "./becomeArtist";
 import PaymentForm from "./payement";
 import AllImages from "./AllImages";
 import AllReviews from "./AllReviews";
+
 export default function App(){
+   
     return<div className=""> 
     <Routes>
         <Route path="" element={<Accules/>}/ >

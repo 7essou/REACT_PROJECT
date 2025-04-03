@@ -34,12 +34,12 @@ export default function BecomeArtistForm() {
 
   const Clickhandler=()=>{
     dispatcher(becomeArtist(formData))
-    navto(`/FormArtiste/formpay/${iduser}`)
+    navto(`/artists/user/${iduser}/page/1`)
   }
 
   return (
-    <div className="bg-neutral-100 ">
-    <div className="max-w-3xl my-4 mx-auto bg-white p-8 rounded-xl shadow-md min-h-screen">
+    <div className=" ">
+    <div className="max-w-3xl  mx-auto h-full bg-gray-100 p-2 rounded-xl shadow-md min-h-screen">
       <h2 className="text-2xl font-bold mb-6 h-[80%] text-black">Become an artist</h2>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex gap-4">
@@ -49,7 +49,7 @@ export default function BecomeArtistForm() {
               type="text"
               name="Neckname"
               onChange={handleChange}
-              className="w-full border p-2 rounded mt-1 bg-neutral-100 text-black"
+              className="w-full border p-2 rounded mt-1 bg-white text-black"
             />
           </div>
           <div className="flex-1">
@@ -58,7 +58,7 @@ export default function BecomeArtistForm() {
               type="text"
               name="Adresse"            
               onChange={handleChange}
-              className="w-full border p-2 rounded mt-1 bg-neutral-100 text-black"
+              className="w-full border p-2 rounded mt-1 bg-white text-black"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function BecomeArtistForm() {
           value={categories.Customizing[0]}
             name="Categorie"
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1 bg-neutral-100 text-black"
+            className="w-full border p-2 rounded mt-1 bg-white text-black"
           >
             {
                catgoriekeys.map((c,i)=>{
@@ -88,7 +88,7 @@ export default function BecomeArtistForm() {
               type="text"
               name="prix"
               onChange={handleChange}
-              className="w-full border p-2 rounded mt-1 bg-neutral-100 text-black"
+              className="w-full border p-2 rounded mt-1 bg-white text-black"
             />
           </div>
           <div className="flex-1">
@@ -97,7 +97,7 @@ export default function BecomeArtistForm() {
             value={cities[0]}
               name="city"
               onChange={handleChange}
-              className="w-full border p-2 rounded mt-1 bg-neutral-100 text-black"
+              className="w-full border p-2 rounded mt-1 bg-white text-black"
             >
               {
                 cities.map((c,i)=>{
@@ -112,7 +112,7 @@ export default function BecomeArtistForm() {
           <textarea
             name="Service_desc"
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1 h-32 bg-neutral-100 text-black"
+            className="w-full border p-2 rounded mt-1 h-32 bg-white text-black"
           ></textarea>
         </div>
         <div>
@@ -120,12 +120,12 @@ export default function BecomeArtistForm() {
           <textarea
             name="about"
             onChange={handleChange}
-            className="w-full border p-2 rounded mt-1 h-32 bg-neutral-100 text-black"
+            className="w-full border p-2 rounded mt-1 h-32 bg-white text-black"
           ></textarea>
         </div>
-        <div className="flex justify-between mt-6">
+        <div className="flex justify-between mt-1">
           <Link to={`/artists/user/${iduser}`} type="button" className="text-gray-500 bg-black px-4 py-2 rounded">Cancel</Link>
-          <button  onClick={Clickhandler} type="submit" className="bg-yellow-500 text-neubg-neutral-100 px-4 py-2 rounded" >Suivant</button>
+          <button  onClick={Clickhandler} type="submit" className="bg-yellow-500 text-neubg-white px-4 py-2 rounded" >Suivant</button>
         </div>
       </form>
     </div>

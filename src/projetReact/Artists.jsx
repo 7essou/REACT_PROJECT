@@ -35,7 +35,7 @@ export default function Artists(){
         (nbpage>1)?nav(`/artists/user/${iduser}/page/${parseInt(nbpage)-1}`):''
     }
     else{
-        (nbpage<Artists.length/8)?nav(`/artists/user/${iduser}/page/${parseInt(nbpage)+1}`):''
+        (nbpage<(Artists.length/8)+1)?nav(`/artists/user/${iduser}/page/${parseInt(nbpage)+1}`):''
     }
     }
 

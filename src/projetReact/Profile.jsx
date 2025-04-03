@@ -12,8 +12,8 @@ export default function Profile(){
     const {iduser}=useParams()
     const Artist=useSelector(s=>s.data.artists).find(e=>e.id==iduser)
     const Users=useSelector(s=>s.data.users)
-    const Reviews=useSelector(s=>s.data.reviews)
-    const imgs=useSelector(s=>s.data.WorkImg).filter(e=>e.id==iduser)
+    const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==iduser)
+    const imgs=useSelector(s=>s.data.images).filter(e=>e.idArtist==iduser)
     const [Vinfo,setVinfo]=useState(false)
     const [Vservice,setVservice]=useState(false)
     const [editArtist,setartist]=useState(Artist)
@@ -121,7 +121,7 @@ export default function Profile(){
                 <div className="flex flex-col justify-baseline align-middle ml-4 bg-gray-200 w-18 h-12 pb-1 rounded-md " >
                     <p className="text-[10px] text-center  text-neutral-600" >RATING</p>
                     <p className="text-[10px] text-center  text-neutral-600 " >{Artist.rating}</p>
-                   <ReactStars size={13} value={Artist.rating} edit={false} classNames="m-auto " />
+                   <ReactStars size={13} value={Reviews.reduce((rating,review)=>{ return rating+=review.rating},0)/Reviews.length} edit={false} classNames="m-auto " />
                 </div>
             </div>
              <div className="relative top-20 right-5">
@@ -143,7 +143,7 @@ export default function Profile(){
             <div className="grid grid-cols-2  gap-2 mr-20 " >
                 
                     {
-                       Reviews.filter(e=>e.idArtist==iduser).splice(0,2).map((r,i)=>{
+                       Reviews.splice(0,2).map((r,i)=>{
                         return<div  key={i} className="bg-neutral-100 rounded-md " > <div  className="grid grid-cols-2">
                         <div> 
                             <div className="m-4 bg-[#EEB866FF] rounded-full size-6 float-left flex flex-col justify-center text-center text-[10px] " >{Users.find(e=>e.id==r.idClient).first_name[0].toUpperCase()}</div>
@@ -181,7 +181,7 @@ export default function Profile(){
 
      })
     }
-  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25)  rounded-md flex justify-center items-center  `} ><p className="absolute    text-4xl " >+</p><input className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>
+  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25) ${(imgs.length==0)?'h-50':''} rounded-md flex justify-center items-center  `} ><p className="absolute    text-4xl " >+</p><input className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>
   </div>
   <Footer/> </div>
 </div>

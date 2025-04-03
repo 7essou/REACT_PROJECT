@@ -30,7 +30,7 @@ export default function NavBar(){
          {(url=='/' || url==`/${undefined} ` ||(url==`/${iduser}` && !Allowed) )   && <div className=" grid grid-cols-2 gap-1 absolute right-10 w-40 h-10 sm:w-50  md:w-60 lg:w-70 xl:w-80  ">
           <Link to={'/login'} className=" rounded-md flex items-center justify-center   text-[#EEB866FF] border-1 border-[#EEB866FF]  grow-3 hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer "><img src="ff" alt="" />Login</Link>
          <Link to={'/signin'} className=" rounded-md flex items-center justify-center   text-[#EEB866FF] border-1 border-[#EEB866FF] grow-3 hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer" ><img src="ff" alt="" />Sign in</Link></div>}
-       {!artiste&& Users.find(e=>e.id==iduser) &&url==`/artists/user/${iduser}`&& Allowed &&<Link className="  absolute right-15 mt-1.5 transition-all ease-out hover:text-[#EEB866FF] hover:font-bold text-center     " to={`/FormArtiste/${iduser}`} >Become an artist</Link>}
+       {!artiste&& Users.find(e=>e.id==iduser) &&url.includes(`/artists/user/${iduser}`)&& Allowed &&<Link className="  absolute right-15 mt-1.5 transition-all ease-out hover:text-[#EEB866FF] hover:font-bold text-center     " to={`/FormArtiste/${iduser}`} >Become an artist</Link>}
        {artiste&& url!='/'&& Allowed  && <Link to={`/notifications/${iduser}`} className="absolute right-10 md:right-15 mt-1.5"> <Bell  /> </Link>}
        {(!Number(iduser) || !Allowed )?'':
        <Menu><MenuButton className=" size-7 bg-[#EEB866FF]  rounded-full text-center mt-0.5 absolute right-1  text-neutral-800 "> {Users.find(e=>e.id==iduser).first_name[0].toUpperCase()}</MenuButton> 

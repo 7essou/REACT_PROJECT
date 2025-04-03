@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { data } from "./data";
 import { useNavigate } from "react-router-dom";
-
+import { getusers } from "./Action";
 const nav=(url)=>{
     return useNavigate(url)
 }
@@ -9,6 +9,9 @@ const slice = createSlice({
     name:'artist slice',
     initialState:{
         data:data,
+        loading: false, 
+        edited: false,
+        users:[],
         Allowed:false,
         nbId:3,
         idreviews:6,
@@ -75,6 +78,22 @@ const slice = createSlice({
             const i =state.data.artists.findIndex(e=>e.id==action.payload.id)
             state.data.artists[i]=action.payload.update
         }
+    },
+
+    extraReducers:(builder)=>{
+        builder
+        .addCase(getusers.fulfilled,(state, action)=>{
+            state.loading=false;
+            state.users=action.payload
+        })
+        .addCase(getusers.pending, (state, action) => { 
+            state.edited = false; 
+            state.loading = true; 
+          }) 
+          .addCase(getusers.rejected, (state, action) => { 
+            state.loading = false; 
+            state.error = action.payload.message; 
+          }) 
     }
 })
 
