@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { becomeArtist } from "./silce";
 import { useNavigate } from "react-router-dom";
+import { createArtist } from "./Action";
 export default function BecomeArtistForm() {
   const dispatcher =useDispatch()
   const navto =useNavigate()
@@ -12,7 +12,7 @@ export default function BecomeArtistForm() {
   const catgoriekeys=Object.keys(categories)
   const [formData, setFormData] = useState({
     id:iduser,
-    Neckname:'',
+    Nickname:'',
     Categorie:'',
     city:'',
     Profil_img:'',
@@ -32,8 +32,8 @@ export default function BecomeArtistForm() {
     e.preventDefault()
   };
 
-  const Clickhandler=()=>{
-    dispatcher(becomeArtist(formData))
+  const Clickhandler= async ()=>{
+   const response = dispatcher(createArtist(formData))
     navto(`/artists/user/${iduser}/page/1`)
   }
 
@@ -47,7 +47,7 @@ export default function BecomeArtistForm() {
             <label className="block font-medium text-black">Nickname</label>
             <input
               type="text"
-              name="Neckname"
+              name="Nickname"
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1 bg-white text-black"
             />
@@ -65,7 +65,7 @@ export default function BecomeArtistForm() {
         <div>
           <label className="block font-medium text-black">Categorie</label>
           <select
-          value={categories.Customizing[0]}
+        
             name="Categorie"
             onChange={handleChange}
             className="w-full border p-2 rounded mt-1 bg-white text-black"
@@ -94,7 +94,7 @@ export default function BecomeArtistForm() {
           <div className="flex-1">
             <label className="block font-medium text-black">Ville</label>
             <select
-            value={cities[0]}
+
               name="city"
               onChange={handleChange}
               className="w-full border p-2 rounded mt-1 bg-white text-black"

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import { addPayInfo } from "./silce";
+import { adduser } from "./Action";
+
 export default function PaymentForm() {
-  const {iduser}=useParams()
+  const location = useLocation();
+  const data = location.state?.formData;
   const dispatcher=useDispatch()
   const navto=useNavigate()
-  console.log(iduser)
- const user=useSelector(s=>s.data.users).find(e=>e.email==iduser)
-  const [formData, setFormData] = useState(user);
+  const [formData, setFormData] = useState(data);
+ 
  const [msg,setmsg]=useState()
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -16,6 +18,7 @@ export default function PaymentForm() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+    console.log(formData)
   };
 
   const  clickHandlet=()=>{
@@ -24,7 +27,7 @@ export default function PaymentForm() {
     }
     else if (formData.paymentMethod =='paypal'&& formData.paypal==''){ setmsg('All fields are required')}
     else{
-      dispatcher(addPayInfo(formData))
+      dispatcher(adduser(formData))
       navto(`/login`)}
     }
   return (

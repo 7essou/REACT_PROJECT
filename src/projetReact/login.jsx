@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const dispatch=useDispatch()
  
-  const users = useSelector(s=>s.data.users)
+  const users = useSelector(s=>s.users)
   const navto = useNavigate()
   const [msg,setmsg]=useState('')
   const [user,setuser]=useState({
     email:'',password:''
   })
-  useSelector(s=>s.data.users).map(e=>{
+  useSelector(s=>s.users).map(e=>{
     console.log(e)
   })
 

@@ -13,9 +13,16 @@ import BecomeArtistForm from "./becomeArtist";
 import PaymentForm from "./payement";
 import AllImages from "./AllImages";
 import AllReviews from "./AllReviews";
-
+import { getusers,getArtists } from "./Action";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 export default function App(){
-   
+    const edited=useSelector(s=>s.edited)
+    const dispatcher=useDispatch()
+    useEffect(()=>{
+       dispatcher(getusers())
+       dispatcher(getArtists())
+    },[dispatcher,edited])
     return<div className=""> 
     <Routes>
         <Route path="" element={<Accules/>}/ >
@@ -33,7 +40,7 @@ export default function App(){
         <Route path="/notifications/:iduser" element={<ArtistNotifications/>}/ >
         <Route path="/reservations/:iduser" element={<ReservationClient/>}/ >
         <Route path="/FormArtiste/:iduser" element={<BecomeArtistForm/>}/ >
-        <Route path="/FormArtiste/formpay/:iduser" element={<PaymentForm/>}/ >
+        <Route path="/FormArtiste/formpay" element={<PaymentForm/>}/ >
         <Route path="/detailArtist/:idArtist/user/:iduser/AllImages" element={<AllImages/>}/>
         <Route path="/detailArtist/:idArtist/user/:iduser/AllReviews" element={<AllReviews/>}/>
     </Routes>

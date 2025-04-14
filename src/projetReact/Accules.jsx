@@ -3,15 +3,11 @@ import NavBar from "./NavBar"
 import Footer from "./footer"
 import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
-import { getusers } from "./Action";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 export default function Accules(){
-    const dispatcher=useDispatch()
-    useEffect(()=>{
-       dispatcher(getusers())
-    },[dispatcher])
+    
     console.log(useSelector(s=>s.users))
+    console.log(useSelector(s=>s.artists))
    const {iduser}=useParams()
     return <div className="w-full">
     <NavBar/>

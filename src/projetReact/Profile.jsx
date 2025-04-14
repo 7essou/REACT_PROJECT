@@ -5,24 +5,47 @@ import NavBar from "./NavBar";
 import ReactStars from "react-rating-stars-component";
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import Footer from "./footer";
-import { editinfo } from "./silce";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { updateArtist ,addImg,getimages} from "./Action";
 export default function Profile(){
+    const edited=useSelector(s=>s.edited)
     const dispatcher=useDispatch()
+    useEffect(()=>{
+      dispatcher(getimages())
+    },[edited])
     const {iduser}=useParams()
-    const Artist=useSelector(s=>s.data.artists).find(e=>e.id==iduser)
-    const Users=useSelector(s=>s.data.users)
+    const Users=useSelector(s=>s.users)
     const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==iduser)
-    const imgs=useSelector(s=>s.data.images).filter(e=>e.idArtist==iduser)
+    const imgs=useSelector(s=>s.images).filter(e=>e.idArtist==iduser)
+    console.log(imgs)
     const [Vinfo,setVinfo]=useState(false)
     const [Vservice,setVservice]=useState(false)
-    const [editArtist,setartist]=useState(Artist)
-    const handeledit=async ()=>{
-    const response=await dispatcher(editinfo({id:iduser,update:editArtist}))
-    if(response){
-     setVinfo(false)
-     setVservice(false)
-    }}
+    const artistdata = new FormData()
+    const images = new FormData()  
+    const Artist=useSelector(s=>s.artists).find(e=>e.id==iduser)
+    const [editArtist,setartist]=useState(Artist) 
+    const [primg,setprimg]=useState('')
+    const [descimg,setdescimg]=useState('')
+    const [img,setimg]=useState()
+    images.append('idArtist',iduser)
+    images.append('image',img)
+    artistdata.append('artist', JSON.stringify(editArtist));
+    artistdata.append('profilImg', primg);
+    artistdata.append('descImg', descimg);
+    useEffect(()=>{
+          dispatcher(addImg(images))
+          dispatcher(updateArtist(artistdata))
+    },[primg,descimg,img])
+    
+    const handeledit = () => {
+      try {
+         dispatcher(updateArtist(artistdata));
+        setVinfo(false);
+        setVservice(false);
+      } catch (error) {
+        console.error("Error updating artist:", error);
+      }
+    };
     return <div >
     <div className={`${(Vservice||Vinfo)?'blur-sm':''}`} ><NavBar/></div>
     <div className={`fixed left-[40%] top-[20%] z-10  transition all duration-300 ease-in-out
@@ -110,10 +133,13 @@ export default function Profile(){
  
     </div>
     <div className={`lg:flex ${(Vservice||Vinfo)?'blur-sm':''}  `}>
-      <div className="  border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full     lg:w-[50%]    " >
+      <div className="  border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full ml-2     lg:w-[50%]    " >
       <button onClick={()=>setVinfo(!Vinfo)} className="float-right m-4 hover:cursor-pointer " ><Pencil size={20} color="black" /></button>
         <div className="grid grid-cols-3 ">
-            {(Artist['Profil_img'])?<div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}><img className="rounded-full" src={`/${Artist['Profil_img']}`} alt="" /></div>: <div className=" relative   top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left flex justify-center items-center" ><p className="absolute  text-4xl " >+</p><input  className=" bg-gray-300 text-gray-300   rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left"  type="file" /></div> }
+            {(Artist['Profil_img'])?<div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}>
+              <img className="rounded-full" src={`${Artist.Profil_img}`} alt="" /></div>: <div className=" relative   top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left flex justify-center items-center" >
+                <p className="absolute  text-4xl " >+</p>
+            <input  className=" bg-gray-300 text-gray-300   rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left" onChange={(e)=>setprimg(e.target.files[0])}  type="file" /></div> }
              
              <div className="space-y-0.5" >
                 <h1 className="mt-4 ml-4 font-bold text-neutral-600  " >{Artist.Nickname}</h1>
@@ -161,8 +187,12 @@ export default function Profile(){
         </div>
       </div> 
 
-      <div className="   border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full lg:ml-4  lg:w-[50%]     " >
-          {(Artist.desc_img)?<div className={` bg-cover w-full rounded-md h-70`} ><img className="w-full h-full rounded-md" src={`/${Artist.desc_img}`} alt="" /></div>: <div className="w-full lg:h-1/2 h-60 bg-cover flex justify-center items-center  " ><p className="absolute  text-4xl " >+</p> <input className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>   } 
+      <div className="   border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full mr-2 lg:ml-4  lg:w-[50%]     " >
+          {(Artist.desc_img)?<div className={` bg-cover w-full rounded-md h-70`} >
+            <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" /></div>
+            : <div className="w-full lg:h-1/2 h-60 bg-cover flex justify-center items-center  " >
+              <p className="absolute  text-4xl " >+</p> 
+              <input onChange={(e)=>setdescimg(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>   } 
       <div className=""><button onClick={()=>setVservice(!Vservice)} className="float-right m-4 hover:cursor-pointer"  ><Pencil size={20} color="black" /></button>
       <div className=" m-3  " ><div className="flex"><p className="font-bold text-4xl   text-[#EEB866FF]" >{Artist.prix}$</p><p className="mt-4  text-neutral-400" >/price</p></div> </div>
       <div className="m-4 mt-4 ">
@@ -177,11 +207,14 @@ export default function Profile(){
     {
      imgs.splice(0,2).map((e,i)=>{
      
-      return <div key={i} className={`   shadow-[0px_1px_1px_rgba(0,0,0,0.25) rounded-md    `} ><img className="rounded-md" src={`/${e.img}`} alt="" /></div>
+      return <div key={i} className={`   shadow-[0px_1px_1px_rgba(0,0,0,0.25) rounded-md    `} ><img className="rounded-md h-60 w-full " src={`${e.img}`} alt="" /></div>
 
      })
     }
-  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25) ${(imgs.length==0)?'h-50':''} rounded-md flex justify-center items-center  `} ><p className="absolute    text-4xl " >+</p><input className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>
+  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25)  rounded-md flex justify-center items-center  `} >
+    <p className="absolute    text-4xl " >+</p>
+    <input onChange={(e)=>setimg(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" />
+    </div>
   </div>
   <Footer/> </div>
 </div>

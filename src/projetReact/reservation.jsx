@@ -8,7 +8,7 @@ const ReservationClient = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
   const reservations = useSelector(s=>s.data.reservations).filter(e=>e.idclient==iduser)
-  const artists= useSelector(s=>s.data.artists)
+  const artists= useSelector(s=>s.artists)
  
   return (
 
@@ -26,7 +26,7 @@ const ReservationClient = () => {
             <div>
               <h3 className="font-semibold">Task with {artists.find(e=>e.id==r.idartist).Nickname}</h3>
               <p className="text-sm text-gray-500">{r.etat}...</p>
-              <span className="text-xs text-gray-400">{r.dateresrv.toLocaleString()}</span>
+              <span className="text-xs text-gray-400">{r.dateresrv.toLocaleString()}</span> 
             </div>
           </div>
 

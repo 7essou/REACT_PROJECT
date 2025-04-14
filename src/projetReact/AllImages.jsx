@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 export default function AllImages(){
     const {idArtist,iduser}=useParams()
-    const images=useSelector(s=>s.data.WorkImg).filter(e=>e.id==idArtist)
+    const images=useSelector(s=>s.data.images).filter(e=>e.id==idArtist)
     return <div>
         <NavBar/>
         <Link className=" text-[12px] md:text-sm  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}`}> {`<`} Back to profile</Link>  

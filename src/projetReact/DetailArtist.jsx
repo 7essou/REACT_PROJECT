@@ -12,8 +12,8 @@ const navto=useNavigate()
 const {iduser,idArtist}=useParams()
 const [visible,setvisible]=useState(false)
 const Allowed = useSelector(s=>s.Allowed)
-const Artist=useSelector(s=>s.data.artists).find(e=>e.id==idArtist)
-const Users=useSelector(s=>s.data.users)
+const Artist=useSelector(s=>s.artists).find(e=>e.id==idArtist)
+const Users=useSelector(s=>s.users)
 const reservations = useSelector(s=>s.data.reservations).find(e=>e.idclient==iduser && e.idartist==idArtist)
 const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==idArtist)
 const [rating,set]=useState(parseInt( Reviews.reduce((rating,review)=>{ return rating+=review.rating},0)/Reviews.length))
@@ -78,9 +78,10 @@ return  <div>
 
 
     <div className={`md:flex p-2  ${visible ?"blur-sm":''}  `}>
-      <div className="border-1 border-gray-200 shadow-sm  rounded-md w-full  mt-1  md:w-[50%]    " >
+      <div className="border-1 border-gray-200 shadow-sm  rounded-md w-full    md:w-[50%]    " >
         <div className="grid grid-cols-3 ">
-             <div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}><img className="rounded-full" src={`/${Artist['Profil_img']}`} alt="" /></div>
+             <div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}>
+              <img className="rounded-full" src={`${Artist['Profil_img']}`} alt="" /></div>
              <div className="space-y-0.5" >
                 <h1 className="mt-4 ml-4 font-bold text-neutral-600  " >{Artist.Nickname}</h1>
                 <p className="text-[#9095A0FF] ml-4 mb-2 text-[12px]" >{Users.find(e=>e.id==idArtist).email}</p>
@@ -132,7 +133,9 @@ return  <div>
          <div >
          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3  relative  gap-1 mt-8 ml-2 " >
            <div className="col-span-2 " >
-             <div className="m-2 bg-[#EEB866FF] rounded-full size-10 float-left flex felx-col justify-center text-center pt-2 " >{(Users.find(e=>e.id==iduser))? Users.find(e=>e.id==iduser).first_name[0].toUpperCase():'A'} </div>
+             <div className="m-2 bg-[#EEB866FF] rounded-full size-10 float-left flex felx-col justify-center text-center pt-2 " >
+              {(Users.find(e=>e.id==iduser))? Users.find(e=>e.id==iduser).first_name[0].toUpperCase():'A'} 
+              </div>
              <input name="description" onChange={changeHandler} readOnly={!Allowed && !reservations}  className=" bg-neutral-100 mt-2 w-3/4 h-10 rounded-3xl border-1 text-center border-neutral-400  text-[10px] placeholder:text-[10px]    " placeholder="Write a comment.." type="text" />
            </div>
  
@@ -145,7 +148,7 @@ return  <div>
       </div> 
 
       <div className=" relative flex   flex-col border-1 border-gray-200 shadow-sm rounded-md w-full md:ml-4  md:w-[50%]     " >
-           <div className={` bg-cover w-full rounded-md h-70`} ><img className="w-full h-full rounded-t-md" src={`/${Artist.desc_img}`} alt="" /></div>
+           <div className={` bg-cover w-full rounded-md h-70`} ><img className="w-full h-full rounded-t-md" src={`${Artist.desc_img}`} alt="" /></div>
     
       <div className="flex relative  m-3" ><p className="font-bold text-4xl   text-[#EEB866FF]" >{Artist.prix}$</p><p className="mt-4  text-neutral-400" >/pice</p> <button onClick={resercheck}  className=" bg-[#EEB866FF] w-[20%] py-2  absolute left-[80%]  rounded-md font-bold text-white hover:cursor-pointer " >Reserve</button></div>  
       <div className=" mt-2 ">
@@ -156,20 +159,18 @@ return  <div>
   </div>  
   <div className={`${visible ?"blur-sm":''} `} >  
   <div className="flex justify-between" > 
-  <h1 className="m-4 font-bold text-2xl text-neutral-900" >my work</h1> 
-  <Link className="m-4  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}/AllImages`}>see all {`>`}</Link>   
+  <h1 className=" ml-2 mb-2 font-bold text-2xl text-neutral-900" >my work</h1> 
+  <Link className="mx-4  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}/AllImages`}>see all {`>`}</Link>   
   </div>
-  <div className="grid grid-cols-3   gap-1 mb-1 mx-1 " >
+  <div className="grid grid-cols-3 mb-6   gap-2 my-2 mx-6 " >
     {
-     imgs.splice(0,3).map((e,i)=>{
-     
-      return <div key={i} className={` h-1/2 shadow-sm  `} ><img className="rounded-sm" src={`/${e.img}`} alt="" /></div>
-
+     imgs.splice(0,3).map((e,i)=>{   
+      return <div key={i} className={`  shadow-sm mb-2`} ><img className="rounded-sm  h-60 w-full " src={`/${e.img}`} alt="" /></div>
      })
     }
    
   </div>
   </div>
-  
+  <Footer/>
 </div>
 }

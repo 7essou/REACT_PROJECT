@@ -9,15 +9,15 @@ import { logout } from "./silce"
 export default function NavBar(){
     const navto = useNavigate()
     const Allowed =useSelector(s=>s.Allowed)
-    const artists=useSelector(s=>s.data.artists)
+    const artists=useSelector(s=>s.artists)
     const {iduser}=useParams()
     const [url,seturl]=useState(window.location.pathname)
     const artiste=artists.find(e=>e.id==iduser)
-    const Users=useSelector(s=>s.data.users)
+    const Users=useSelector(s=>s.users)
     const dispatch=useDispatch()
     const logouHandler=()=>{
       dispatch(logout(false))
-      navto('/')
+      navto('')
     }
     return  <nav className="flex  gap-4 relative shadow-sm bg-white z-10  w-full p-2 pb-0 mb-1   border-b border-neutral-200 ">
         <img src="logo.png" className="size-10 " alt="" /><h1 className="text-[25px] text-[Gill Sans] mb-4 " >GetArt</h1>
@@ -27,7 +27,7 @@ export default function NavBar(){
         {artiste&& url!='/'&& Allowed &&<li className={`md:w-30 transition-all ease-out hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold ${url.includes('/profile')?'border-b-4 font-bold text-[#EEB866FF]':''}  border-[#EEB866FF] text-center `}><Link to={`/profile/${iduser}`}>Myprofile</Link></li> }
         </ul>
         <div className="flex gap-4 absolute  right-0 w-1/2">
-         {(url=='/' || url==`/${undefined} ` ||(url==`/${iduser}` && !Allowed) )   && <div className=" grid grid-cols-2 gap-1 absolute right-10 w-40 h-10 sm:w-50  md:w-60 lg:w-70 xl:w-80  ">
+         {(url=='' || url==`/${undefined} ` ||!Allowed )   && <div className=" grid grid-cols-2 gap-1 absolute right-10 w-40 h-10 sm:w-50  md:w-60 lg:w-70 xl:w-80  ">
           <Link to={'/login'} className=" rounded-md flex items-center justify-center   text-[#EEB866FF] border-1 border-[#EEB866FF]  grow-3 hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer "><img src="ff" alt="" />Login</Link>
          <Link to={'/signin'} className=" rounded-md flex items-center justify-center   text-[#EEB866FF] border-1 border-[#EEB866FF] grow-3 hover:bg-[#EEB866FF] hover:text-white hover:cursor-pointer" ><img src="ff" alt="" />Sign in</Link></div>}
        {!artiste&& Users.find(e=>e.id==iduser) &&url.includes(`/artists/user/${iduser}`)&& Allowed &&<Link className="  absolute right-15 mt-1.5 transition-all ease-out hover:text-[#EEB866FF] hover:font-bold text-center     " to={`/FormArtiste/${iduser}`} >Become an artist</Link>}

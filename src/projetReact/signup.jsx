@@ -3,14 +3,15 @@ import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { singin } from "./silce";
 import { useNavigate } from "react-router-dom";
+
 export default function SignupForm() {
-  const dispatch=useDispatch()
+
   const navto=useNavigate()
   const [msg,setmsg]=useState('')
   const [formData, setFormData] = useState({
-    id:'',
+    
     first_name:'',
-    Last_name:'',
+    last_name:'',
     phone:'',
     email:'',
     password :'',
@@ -30,8 +31,7 @@ export default function SignupForm() {
     setmsg('All fields re required !')
     }
     else{
-      dispatch(singin(formData))
-    navto(`/FormArtiste/formpay/${formData.email}`)
+      navto("/FormArtiste/formpay", { state: { formData } });
     }
     
   }
@@ -63,7 +63,7 @@ export default function SignupForm() {
             />
             <input
               type="text"
-              name="Last_name"
+              name="last_name"
               placeholder="Last name"
               value={formData.lastName}
               onChange={handleChange}

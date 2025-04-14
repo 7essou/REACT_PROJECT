@@ -8,7 +8,7 @@ const ArtistNotifications = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
   const reservations = useSelector(s=>s.data.reservations).filter(e=>e.idartist==iduser)
-  const users =useSelector(s=>s.data.users)
+  const users =useSelector(s=>s.users)
   return (<><NavBar/>
     <div className=" w-full mx-auto ">
       

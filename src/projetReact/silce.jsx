@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { data } from "./data";
-import { useNavigate } from "react-router-dom";
-import { getusers } from "./Action";
-const nav=(url)=>{
-    return useNavigate(url)
-}
+
+import { getusers,adduser,getArtists,createArtist,updateArtist,addImg,getimages} from "./Action";
+
 const slice = createSlice({
     name:'artist slice',
     initialState:{
         data:data,
         loading: false, 
         edited: false,
+        error:'',
         users:[],
+        artists:[],
+        images:[],
         Allowed:false,
         nbId:3,
         idreviews:6,
@@ -94,6 +95,74 @@ const slice = createSlice({
             state.loading = false; 
             state.error = action.payload.message; 
           }) 
+          .addCase(adduser.pending, (state) => { 
+            state.loading = true; 
+          }) 
+          .addCase(adduser.rejected, (state, action) => { 
+            state.loading = false; 
+            state.error = action.payload.message; 
+          }) 
+          .addCase(adduser.fulfilled, (state, action) => { 
+            state.loading = false; 
+            state.edited = true; 
+          }) 
+          .addCase(getArtists.fulfilled,(state,action)=>{
+            state.loading=false
+            state.artists=action.payload 
+          })
+          .addCase(getArtists.pending,(state)=>{
+            state.loading=true 
+          })
+          .addCase(getArtists.rejected,(state,action)=>{
+            state.loading=false
+            state.error=action.payload.message;
+          })
+          .addCase(createArtist.fulfilled,(state)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(createArtist.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(createArtist.pending,(state,action)=>{
+            state.loading = false; 
+          })
+          .addCase(updateArtist.fulfilled,(state)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(updateArtist.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(updateArtist.pending,(state,action)=>{
+            state.loading = false; 
+          })
+          .addCase(addImg.fulfilled,(state,action)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(addImg.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(addImg.pending,(state,action)=>{
+            state.loading = false; 
+          })
+          .addCase(getimages.fulfilled,(state, action)=>{
+            state.loading=false;
+            state.images=action.payload
+        })
+        .addCase(getimages.pending, (state, action) => { 
+            state.edited = false; 
+            state.loading = true; 
+          }) 
+          .addCase(getimages.rejected, (state, action) => { 
+            state.loading = false; 
+            state.error = action.payload.message; 
+          }) 
+
     }
 })
 
