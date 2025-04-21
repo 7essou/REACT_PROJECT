@@ -7,6 +7,7 @@ import { useSelector } from "react-redux"
 export default function Accules(){
     
     console.log(useSelector(s=>s.users))
+    console.log(useSelector(s=>s.reviews))
     console.log(useSelector(s=>s.artists))
    const {iduser}=useParams()
     return <div className="w-full">

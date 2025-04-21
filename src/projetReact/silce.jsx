@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { data } from "./data";
 
-import { getusers,adduser,getArtists,createArtist,updateArtist,addImg,getimages} from "./Action";
+import { getusers,adduser,getArtists,createArtist,updateArtist,addImg,getimages, getReviews, addReview, getReservation} from "./Action";
 
 const slice = createSlice({
     name:'artist slice',
@@ -13,6 +13,8 @@ const slice = createSlice({
         users:[],
         artists:[],
         images:[],
+        reviews:[],
+        reservations:[],
         Allowed:false,
         nbId:3,
         idreviews:6,
@@ -159,6 +161,41 @@ const slice = createSlice({
             state.loading = true; 
           }) 
           .addCase(getimages.rejected, (state, action) => { 
+            state.loading = false; 
+            state.error = action.payload.message; 
+          }) 
+          .addCase(getReviews.fulfilled,(state, action)=>{
+            state.loading=false;
+            state.reviews=action.payload
+        })
+        .addCase(getReviews.pending, (state, action) => { 
+            state.edited = false; 
+            state.loading = true; 
+          }) 
+          .addCase(getReviews.rejected, (state, action) => { 
+            state.loading = false; 
+            state.error = action.payload.message; 
+          }) 
+          .addCase(addReview.fulfilled,(state,action)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(addReview.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(addReview.pending,(state,action)=>{
+            state.loading = false; 
+          })
+           .addCase(getReservation.fulfilled,(state, action)=>{
+            state.loading=false;
+            state.reservations=action.payload
+        })
+        .addCase(getReservation.pending, (state, action) => { 
+            state.edited = false; 
+            state.loading = true; 
+          }) 
+          .addCase(getReservation.rejected, (state, action) => { 
             state.loading = false; 
             state.error = action.payload.message; 
           }) 

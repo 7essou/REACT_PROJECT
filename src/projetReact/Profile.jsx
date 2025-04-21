@@ -15,7 +15,7 @@ export default function Profile(){
     },[edited])
     const {iduser}=useParams()
     const Users=useSelector(s=>s.users)
-    const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==iduser)
+    const Reviews=useSelector(s=>s.reviews).filter(e=>e.idArtist==iduser)
     const imgs=useSelector(s=>s.images).filter(e=>e.idArtist==iduser)
     console.log(imgs)
     const [Vinfo,setVinfo]=useState(false)
@@ -137,7 +137,13 @@ export default function Profile(){
       <button onClick={()=>setVinfo(!Vinfo)} className="float-right m-4 hover:cursor-pointer " ><Pencil size={20} color="black" /></button>
         <div className="grid grid-cols-3 ">
             {(Artist['Profil_img'])?<div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}>
-              <img className="rounded-full" src={`${Artist.Profil_img}`} alt="" /></div>: <div className=" relative   top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left flex justify-center items-center" >
+              <img className=" relative rounded-full" src={`${Artist.Profil_img}`} alt="" />
+              <div  onClick={()=>{document.getElementById('primg').click()}} className="size-5 rounded-full flex justify-center items-center absolute right-1 top-3 bg-gray-200" >
+                <Pencil size={14} color="black" />
+                <input type="file" id="primg" className="hidden" onChange={(e)=>{setprimg(e.target.files[0])}} />
+                </div>
+              </div>
+                : <div className=" relative   top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left flex justify-center items-center" >
                 <p className="absolute  text-4xl " >+</p>
             <input  className=" bg-gray-300 text-gray-300   rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left" onChange={(e)=>setprimg(e.target.files[0])}  type="file" /></div> }
              
@@ -188,8 +194,8 @@ export default function Profile(){
       </div> 
 
       <div className="   border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full mr-2 lg:ml-4  lg:w-[50%]     " >
-          {(Artist.desc_img)?<div className={` bg-cover w-full rounded-md h-70`} >
-            <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" /></div>
+          {(Artist.desc_img)?<div className={` bg-cover  relative w-full rounded-md h-70`} >
+            <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" /><div onClick={()=>{document.getElementById("descimg").click()}} className="absolute top-1 right-1" ><Pencil size={20} color="black" /><input type="file" id="descimg" className="hidden" onChange={(e)=>{setdescimg(e.target.files[0])}}  /> </div></div>
             : <div className="w-full lg:h-1/2 h-60 bg-cover flex justify-center items-center  " >
               <p className="absolute  text-4xl " >+</p> 
               <input onChange={(e)=>setdescimg(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>   } 
@@ -211,9 +217,9 @@ export default function Profile(){
 
      })
     }
-  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25)  rounded-md flex justify-center items-center  `} >
+  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25) ${imgs.length==0?'h-60':''}  rounded-md flex justify-center items-center  `} >
     <p className="absolute    text-4xl " >+</p>
-    <input onChange={(e)=>setimg(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" />
+    <input onChange={(e)=>setimg(e.target.files[0])} className={` bg-cover text-neutral-200  bg-neutral-200 w-full rounded-md h-full`} type="file" />
     </div>
   </div>
   <Footer/> </div>

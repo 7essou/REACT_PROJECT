@@ -6,6 +6,7 @@ import Footer from "./footer";
 import ReactStars from "react-rating-stars-component";
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import { useState } from "react";
+import { addReview } from "./Action";
 
 export default function DetailArtist(){
 const navto=useNavigate()
@@ -15,10 +16,10 @@ const Allowed = useSelector(s=>s.Allowed)
 const Artist=useSelector(s=>s.artists).find(e=>e.id==idArtist)
 const Users=useSelector(s=>s.users)
 const reservations = useSelector(s=>s.data.reservations).find(e=>e.idclient==iduser && e.idartist==idArtist)
-const Reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==idArtist)
+const Reviews=useSelector(s=>s.reviews).filter(e=>e.idArtist==idArtist)
 const [rating,set]=useState(parseInt( Reviews.reduce((rating,review)=>{ return rating+=review.rating},0)/Reviews.length))
-const imgs=useSelector(s=>s.data.images).filter(e=>e.idArtist==idArtist)
-console.log(useSelector(s=>s.data.Allowedsafiy))
+const imgs=useSelector(s=>s.images).filter(e=>e.idArtist==idArtist)
+
 const[review,setreview]=useState({
         id:'jkj',
         idArtist:idArtist,
@@ -39,11 +40,11 @@ const changeHandler=(e)=>{
 const {value,name}=e.target 
 setreview({...review,[name]:value})
 }
-const clickHandler= async()=>{
- const r =await dispatcher(addreview(review))
+const clickHandler= ()=>{
+ const r = dispatcher(addReview(review))
 }
-const addReservation= async ()=>{
-const r= await dispatcher(addreservation(reserv))
+const addReservation=  ()=>{
+const r=  dispatcher(addreservation(reserv))
 setvisible(false)
 }
 const resercheck = ()=>{
@@ -133,14 +134,13 @@ return  <div>
          <div >
          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3  relative  gap-1 mt-8 ml-2 " >
            <div className="col-span-2 " >
-             <div className="m-2 bg-[#EEB866FF] rounded-full size-10 float-left flex felx-col justify-center text-center pt-2 " >
+             <div className={`m-2 bg-[#EEB866FF] rounded-full size-10 float-left flex felx-col justify-center text-center pt-2 ${(!Allowed || !reservations)?'hidden':'hover:cursor-pointer'} `} >
               {(Users.find(e=>e.id==iduser))? Users.find(e=>e.id==iduser).first_name[0].toUpperCase():'A'} 
               </div>
-             <input name="description" onChange={changeHandler} readOnly={!Allowed && !reservations}  className=" bg-neutral-100 mt-2 w-3/4 h-10 rounded-3xl border-1 text-center border-neutral-400  text-[10px] placeholder:text-[10px]    " placeholder="Write a comment.." type="text" />
+             <input name="description" onChange={changeHandler}  className={` bg-neutral-100 mt-2 w-3/4 h-10 rounded-3xl border-1 text-center border-neutral-400  text-[10px] placeholder:text-[10px] ${(!Allowed || !reservations)?'hidden':''} `} placeholder="Write a comment.." type="text" />
            </div>
- 
-         <ReactStars name='rating' onChange={(e)=>setreview({...review,rating:e})} size={25}  classNames={` relative right-6 top-1 `}  />
-         <button onClick={clickHandler} className={`absolute right-[2%] bottom-1 ${(!Allowed && !reservations)?'cursor-not-allowed pointer-events-none':'hover:cursor-pointer'} bg-[#EEB866FF] w-[10%] py-3  mt-6  rounded-md font-bold  text-white  `} >Add</button>
+         <ReactStars name='rating' onChange={(e)=>setreview({...review,rating:e})} size={25}  classNames={` relative right-6 top-1 ${(!Allowed || !reservations)?'hidden':'hover:cursor-pointer'} `}  />
+         <button onClick={clickHandler}  className={`absolute right-[2%] bottom-1 ${(!Allowed || !reservations)?'hidden':'hover:cursor-pointer'} bg-[#EEB866FF] w-[10%] py-3  mt-6  rounded-md font-bold  text-white  `} >Add</button>
 
        </div>
        </div>
@@ -163,9 +163,12 @@ return  <div>
   <Link className="mx-4  text-[#EEB866FF]" to={`/detailArtist/${idArtist}/user/${iduser}/AllImages`}>see all {`>`}</Link>   
   </div>
   <div className="grid grid-cols-3 mb-6   gap-2 my-2 mx-6 " >
-    {
+    {(imgs.length==0)?<div  className="h-80 w-full flex items-center justify-center col-span-4">
+                <p className="text-gray-400  md:text-2xl">No images...</p>
+             </div>
+    :
      imgs.splice(0,3).map((e,i)=>{   
-      return <div key={i} className={`  shadow-sm mb-2`} ><img className="rounded-sm  h-60 w-full " src={`/${e.img}`} alt="" /></div>
+      return <div key={i} className={`  shadow-sm mb-2`} ><img className="rounded-sm  h-60 w-full " src={`${e.img}`} alt="" /></div>
      })
     }
    

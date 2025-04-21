@@ -9,7 +9,7 @@ return  <div className="  flex flex-col   mb-2 mr-2  border-1 bg-white shadow-sm
     <Link to={`/detailArtist/${artist.id}/user/${iduser}`} ><img src={`${artist.desc_img}`} className="w-full rounded-t-md h-45  " alt="" /></Link>
 <div className="flex relative" >
     <img className={` size-12  relative bottom-6  bg-cover border-gray-500  rounded-full text-center ml-4 inline-block `} src={`${artist.Profil_img}`} alt="" />
-    <b className="inline-block absolute right-[10%] text-md ml-1 " >{artist.nickname}</b>   
+    <b className="inline-block absolute right-[10%] text-md ml-1 " >{artist.Nickname}</b>   
 </div>
     <div className="relative bottom-3 ">
     <p className="text-[#9095A0FF] text-sm ml-4 " >{artist.Categorie}</p>

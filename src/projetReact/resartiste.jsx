@@ -7,7 +7,7 @@ import { accept,refuse } from "./silce";
 const ArtistNotifications = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
-  const reservations = useSelector(s=>s.data.reservations).filter(e=>e.idartist==iduser)
+  const reservations = useSelector(s=>s.reservations).filter(e=>e.idartist==iduser)
   const users =useSelector(s=>s.users)
   return (<><NavBar/>
     <div className=" w-full mx-auto ">

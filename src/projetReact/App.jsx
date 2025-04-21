@@ -13,7 +13,7 @@ import BecomeArtistForm from "./becomeArtist";
 import PaymentForm from "./payement";
 import AllImages from "./AllImages";
 import AllReviews from "./AllReviews";
-import { getusers,getArtists } from "./Action";
+import { getusers,getArtists, getimages, getReviews, getReservation } from "./Action";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 export default function App(){
@@ -21,7 +21,10 @@ export default function App(){
     const dispatcher=useDispatch()
     useEffect(()=>{
        dispatcher(getusers())
+       dispatcher(getReviews())
        dispatcher(getArtists())
+       dispatcher(getimages())
+       dispatcher(getReservation())
     },[dispatcher,edited])
     return<div className=""> 
     <Routes>

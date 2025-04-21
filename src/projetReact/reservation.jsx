@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 const ReservationClient = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
-  const reservations = useSelector(s=>s.data.reservations).filter(e=>e.idclient==iduser)
+  const reservations = useSelector(s=>s.reservations).filter(e=>e.idclient==iduser)
   const artists= useSelector(s=>s.artists)
  
   return (

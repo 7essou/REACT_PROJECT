@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import NavBar from "./NavBar"
 import ReactStars from "react-rating-stars-component";
 export default function AllReviews(){
+  const nav=useNavigate()
     const {idArtist,iduser}=useParams();
-    const reviews=useSelector(s=>s.data.reviews).filter(e=>e.idArtist==idArtist)
+    const reviews=useSelector(s=>s.reviews).filter(e=>e.idArtist==idArtist)
     const users =useSelector(s=>s.users)
   return (<><NavBar/>
-          <Link className=" text-[12px] md:text-sm text-[#EEB866FF] ml-2" to={`/detailArtist/${idArtist}/user/${iduser}`}> {`<`} Back to profile</Link>  
+          <Link className=" text-[12px] md:text-sm text-[#EEB866FF] ml-2" onClick={()=>{nav(-1)}}> {`<`} Back to profile</Link>  
     <div className=" w-full mx-auto mt-2 ">
       {
       (reviews.length>0)?

@@ -17,7 +17,7 @@ export default function NavBar(){
     const dispatch=useDispatch()
     const logouHandler=()=>{
       dispatch(logout(false))
-      navto('')
+      navto('/')
     }
     return  <nav className="flex  gap-4 relative shadow-sm bg-white z-10  w-full p-2 pb-0 mb-1   border-b border-neutral-200 ">
         <img src="logo.png" className="size-10 " alt="" /><h1 className="text-[25px] text-[Gill Sans] mb-4 " >GetArt</h1>
