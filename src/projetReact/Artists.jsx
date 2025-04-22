@@ -40,7 +40,7 @@ export default function Artists(){
     }
 
     return<> <div className="relative w-full  "> <NavBar/>
-    <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 p-4  w-[98%] relative  ">
+    <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4  w-[98%] relative  ">
         <select name="categorie" onChange={(e)=>setcategorie(e.target.value)} className=" border-1 bg-white border-gray-300 pl-2 rounded-md w-full size-9 "  >
           {
             catgoriekeys.map((c,i)=>{
