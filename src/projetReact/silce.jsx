@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { data } from "./data";
 
-import { getusers,adduser,getArtists,createArtist,updateArtist,addImg,getimages, getReviews, addReview, getReservation} from "./Action";
+import { getusers,adduser,getArtists,createArtist,updateArtist,addImg,getimages, getReviews, addReview, getReservation, addReservation, updateEtat} from "./Action";
 
 const slice = createSlice({
     name:'artist slice',
@@ -199,6 +199,28 @@ const slice = createSlice({
             state.loading = false; 
             state.error = action.payload.message; 
           }) 
+          .addCase(addReservation.fulfilled,(state,action)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(addReservation.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(addReservation.pending,(state,action)=>{
+            state.loading = false; 
+          })
+          .addCase(updateEtat.fulfilled,(state)=>{
+            state.loading = false; 
+            state.edited = true;
+          })
+          .addCase(updateEtat.rejected,(state,action)=>{
+            state.loading = false; 
+            state.error = action.payload.message;
+          })
+          .addCase(updateEtat.pending,(state,action)=>{
+            state.loading = false; 
+          })
 
     }
 })

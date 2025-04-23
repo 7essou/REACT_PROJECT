@@ -4,6 +4,7 @@ import { annuler,terminer } from "./silce";
 import { useParams } from "react-router-dom";
 import Footer from "./footer";
 import NavBar from "./NavBar";
+import { updateEtat } from "./Action";
 const ReservationClient = () => {
   const dispatcher=useDispatch()
   const {iduser}=useParams()
@@ -34,14 +35,14 @@ const ReservationClient = () => {
          <div className="flex space-x-2">{(r.etat=='') && 
             <button
             name="annuler"
-              onClick={(e)=>dispatcher(annuler(r.id))}
+              onClick={(e)=>dispatcher(updateEtat({etat:'canceled',id:r.id}))}
               className="bg-[#EEB866FF] text-white px-3 py-1 rounded"
             >
               annuler
             </button>}
             {(r.etat=='done') ?'': <button
             name="terminer"
-              onClick={(e)=>dispatcher(terminer(r.id))}
+              onClick={(e)=>dispatcher(updateEtat({etat:'done',id:r.id}))}
               className="bg-[#EEB866FF] text-white px-3 py-1 rounded"
             >
               terminer

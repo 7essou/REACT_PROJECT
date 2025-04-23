@@ -6,7 +6,7 @@ import Footer from "./footer";
 import ReactStars from "react-rating-stars-component";
 import { MapPinIcon } from '@heroicons/react/24/solid';
 import { useState } from "react";
-import { addReview } from "./Action";
+import { addReservation, addReview } from "./Action";
 
 export default function DetailArtist(){
 const navto=useNavigate()
@@ -32,7 +32,7 @@ const[reserv,setreserv]=useState({
     idclient :iduser,
     idartist :idArtist,
     etat:"",
-    dateresrv : new Date(),
+    dateresrv : '',
     note:''
 })
 const dispatcher=useDispatch()
@@ -43,8 +43,8 @@ setreview({...review,[name]:value})
 const clickHandler= ()=>{
  const r = dispatcher(addReview(review))
 }
-const addReservation=  ()=>{
-const r=  dispatcher(addreservation(reserv))
+const addres=  ()=>{
+const r=  dispatcher(addReservation(reserv))
 setvisible(false)
 }
 const resercheck = ()=>{
@@ -74,7 +74,7 @@ return  <div>
             className="w-full resize-none border p-2 rounded mt-1 h-32 bg-white text-black"
           ></textarea>
           <button onClick={()=>setvisible(false)} className="m-auto bg-[#EEB866FF] w-[20%]  mt-4 absolute top-[70%] left-[50%] py-2 rounded-md font-bold text-white hover:cursor-pointer ">Annuler</button>
-          <button onClick={addReservation} className="m-auto bg-[#EEB866FF] w-[20%]  mt-4 absolute top-[70%] left-[75%] py-2 rounded-md font-bold text-white hover:cursor-pointer " >Add</button>
+          <button onClick={addres} className="m-auto bg-[#EEB866FF] w-[20%]  mt-4 absolute top-[70%] left-[75%] py-2 rounded-md font-bold text-white hover:cursor-pointer " >Add</button>
   </div>
 
 

@@ -24,7 +24,7 @@ export const getArtists = createAsyncThunk('artists/getArtists', async (_, { rej
         const response = await axios.get('http://127.0.0.1:8000/api/artist');
         return response.data; // Return data if the request is successful
     } catch (error) {
-        console.error("Error fetching artists:", error.response?.data || error.message);
+        console.error("Error :", error.response?.data || error.message);
         return rejectWithValue(error.response?.data || "An error occurred"); // Rejecting with value for proper error handling
     }
 });
@@ -34,11 +34,11 @@ export const createArtist = createAsyncThunk('create/artists',async (artist,{ re
     return response.data 
   }
   catch(error){
-    console.error("Error fetching artists:", error.response?.data || error.message);
+    console.error("Error:", error.response?.data || error.message);
         return rejectWithValue(error.response?.data || "An error occurred");
   }
 })
-export const updateArtist = createAsyncThunk('update/artist', async (artistdata, { rejectWithValue }) => {
+export const updateArtist = createAsyncThunk('update/artist', async (artistdata) => {
     try {
       const id = JSON.parse(artistdata.get('artist')).id;
   
@@ -54,8 +54,8 @@ export const updateArtist = createAsyncThunk('update/artist', async (artistdata,
   
       return response.data;
     } catch (error) {
-      console.error("Error updating artist:", error.response?.data || error.message);
-      return rejectWithValue(error.response?.data || "An error occurred");
+      console.error("Error:", error.response?.data || error.message);
+
     }
   });
 
@@ -78,7 +78,7 @@ export const updateArtist = createAsyncThunk('update/artist', async (artistdata,
         return response.data; 
     }
     catch(error){
-      console.error("Error updating artist:", error.response.data );
+      console.error("Error :", error.response.data );
     }
 });
 
@@ -88,7 +88,7 @@ export const getReviews =createAsyncThunk('get/reviews',async ()=>{
     return response.data ;
   }
   catch(error){
-    console.error("Error updating artist:", error.response.data );
+    console.error("Error :", error.response.data );
   }
 })
 
@@ -98,7 +98,7 @@ export const addReview=createAsyncThunk('add/review', async (review)=>{
   return response.data ;
   }
   catch(error){
-    console.error("Error updating artist:", error.response.data );
+    console.error("Error:", error.response.data );
   }
 })
 
@@ -108,7 +108,27 @@ export const getReservation = createAsyncThunk('get/res',async ()=>{
   return response.data ;
 }
 catch(error){
-  console.error("Error updating artist:", error.response.data );
+  console.error("Error ", error.response.data );
 }
 })
 
+export const addReservation=createAsyncThunk('add/reservation', async (res)=>{
+  try{
+  const response = await axios.post("http://127.0.0.1:8000/api/reservation",res);
+  return response.data ;
+  }
+  catch(error){
+    console.error("Error :", error.response?.data );
+  }
+})
+
+export const updateEtat = createAsyncThunk('update/etat',async ({etat,id})=>{
+  
+   try{
+    const response = await axios.put(`http://127.0.0.1:8000/api/reservation/${id}`,{etat})
+    return response ;
+   }
+   catch(error){
+    console.error("Error :", error.response?.data );
+   }
+})

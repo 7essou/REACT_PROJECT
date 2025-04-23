@@ -25,7 +25,7 @@ export default function Profile(){
     const Artist=useSelector(s=>s.artists).find(e=>e.id==iduser)
     const [editArtist,setartist]=useState(Artist) 
     const [primg,setprimg]=useState('')
-    const [descimg,setdescimg]=useState('')
+    const [descimg,setimgdesc]=useState('')
     const [img,setimg]=useState()
     images.append('idArtist',iduser)
     images.append('image',img)
@@ -195,10 +195,13 @@ export default function Profile(){
 
       <div className="   border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full mr-2 lg:ml-4  lg:w-[50%]     " >
           {(Artist.desc_img)?<div className={` bg-cover  relative w-full rounded-md h-70`} >
-            <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" /><div onClick={()=>{document.getElementById("descimg").click()}} className="absolute top-1 right-1" ><Pencil size={20} color="black" /><input type="file" id="descimg" className="hidden" onChange={(e)=>{setdescimg(e.target.files[0])}}  /> </div></div>
+            <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" />
+            <div onClick={()=>{document.getElementById("descimg").click()}} className="absolute top-1 right-1" >
+              <Pencil size={20} color="black" />
+            <input type="file" id="descimg" className="hidden" onChange={(e)=>{setimgdesc(e.target.files[0])}}  /> </div></div>
             : <div className="w-full lg:h-1/2 h-60 bg-cover flex justify-center items-center  " >
               <p className="absolute  text-4xl " >+</p> 
-              <input onChange={(e)=>setdescimg(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>   } 
+              <input onChange={(e)=>setimgdesc(e.target.files[0])} className={` bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" /></div>   } 
       <div className=""><button onClick={()=>setVservice(!Vservice)} className="float-right m-4 hover:cursor-pointer"  ><Pencil size={20} color="black" /></button>
       <div className=" m-3  " ><div className="flex"><p className="font-bold text-4xl   text-[#EEB866FF]" >{Artist.prix}$</p><p className="mt-4  text-neutral-400" >/price</p></div> </div>
       <div className="m-4 mt-4 ">

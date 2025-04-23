@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import { useSelector ,useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 import { accept,refuse } from "./silce";
+import { updateEtat } from "./Action";
 
 const ArtistNotifications = () => {
   const dispatcher=useDispatch()
@@ -23,13 +24,13 @@ const ArtistNotifications = () => {
             <p className="text-gray-400 text-xs">{r.dateresrv.toLocaleString()}</p>
           </div>
          {(r.etat=='')?<div><button 
-           onClick={()=>dispatcher(refuse(r.id))}
+           onClick={()=>dispatcher(updateEtat({etat:'refused',id:r.id}))}
             className="bg-[#EEB866FF] text-white px-3 py-1 rounded-md mx-1"
           >
             Refuser
           </button>
           <button 
-            onClick={()=>dispatcher(accept(r.id))}
+            onClick={()=>dispatcher(updateEtat({etat:'accepted',id:r.id}))}
             className="bg-[#EEB866FF] text-white px-3 py-1 rounded-md"
           >
             Accepter
