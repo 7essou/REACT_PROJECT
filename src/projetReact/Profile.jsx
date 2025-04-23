@@ -33,10 +33,10 @@ export default function Profile(){
     artistdata.append('profilImg', primg);
     artistdata.append('descImg', descimg);
     useEffect(()=>{
-          dispatcher(addImg(images))
-          dispatcher(updateArtist(artistdata))
-    },[primg,descimg,img])
-    
+      dispatcher(addImg(images))
+      dispatcher(updateArtist(artistdata))
+},[primg,descimg,img])
+
     const handeledit = () => {
       try {
          dispatcher(updateArtist(artistdata));

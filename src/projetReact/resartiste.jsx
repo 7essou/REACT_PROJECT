@@ -23,7 +23,7 @@ const ArtistNotifications = () => {
             <p className="text-gray-600 text-sm">{r.note}</p>
             <p className="text-gray-400 text-xs">{r.dateresrv.toLocaleString()}</p>
           </div>
-         {(r.etat=='')?<div><button 
+         {(r.etat==null)?<div><button 
            onClick={()=>dispatcher(updateEtat({etat:'refused',id:r.id}))}
             className="bg-[#EEB866FF] text-white px-3 py-1 rounded-md mx-1"
           >

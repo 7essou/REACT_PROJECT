@@ -32,7 +32,7 @@ const ReservationClient = () => {
           </div>
 
         
-         <div className="flex space-x-2">{(r.etat=='') && 
+         <div className="flex space-x-2">{(r.etat==null) && 
             <button
             name="annuler"
               onClick={(e)=>dispatcher(updateEtat({etat:'canceled',id:r.id}))}
@@ -40,7 +40,7 @@ const ReservationClient = () => {
             >
               annuler
             </button>}
-            {(r.etat=='done') ?'': <button
+            {(r.etat=='done'|| r.etat=='canceled') ?'': <button
             name="terminer"
               onClick={(e)=>dispatcher(updateEtat({etat:'done',id:r.id}))}
               className="bg-[#EEB866FF] text-white px-3 py-1 rounded"

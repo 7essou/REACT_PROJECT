@@ -17,7 +17,7 @@ export default function NavBar(){
     const dispatch=useDispatch()
     const logouHandler=()=>{
       dispatch(logout(false))
-      navto('')
+      navto('/')
     }
     return  <nav className="flex flex-col sm:flex-row gap-4 relative shadow-md bg-white z-10 w-full p-4 pb-0 mb-1 border-b border-neutral-200">
          <div className="flex items-center space-x-2">
