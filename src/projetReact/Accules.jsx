@@ -10,14 +10,14 @@ export default function Accules(){
     console.log(useSelector(s=>s.reviews))
     console.log(useSelector(s=>s.artists))
    const {iduser}=useParams()
-    return <div className="w-full">
+    return <div className="w-full overflow-x-hidden">
     <NavBar/>
- <div className="relative ">
-<div className=" relative bg-[url(/pc1.png)] bg-cover shadow-md w-full md:h-100 h-80  rounded-md  flex items-center justify-center">
- <h1 className="md:text-6xl text-2xl font-bold absolute top-15 text-[#171A1FFF]">Live it with your design</h1>
- <h1 className="md:text-3xl text-xl  absolute top-35 text-[#EEB866FF]">Crafting Custom Styles to Reflect Your Identity</h1>
-</div>
-<h1 className="  text-3xl m-6  font-bold  ml-30">Some of our serveces </h1>
+    <div className="relative w-full">
+        <div className="relative bg-[url(/pc1.png)] bg-cover shadow-md w-full md:h-100 h-80 rounded-md flex items-center justify-center">
+            <h1 className="md:text-6xl text-2xl font-bold absolute top-15 text-[#171A1FFF]">Live it with your design</h1>
+            <h1 className="md:text-3xl text-xl absolute top-35 text-[#EEB866FF]">Crafting Custom Styles to Reflect Your Identity</h1>
+        </div>
+        <h1 className="text-3xl m-4 font-bold">Some of our serveces</h1>
 
 <div className=" grid grid-cols-3 gap-100 md:gap-1 xl:gap-5 overflow-x-scroll   md:overflow-x-visible  snap-x justify-around mt-1 pl-10 pr-10 m-auto     ">
     <div className=" bg-white w-100 snap-center scroll-ml-6  shadow-[0px_0px_1px_rgba(0,0,0,0.25)] rounded-md md:w-60  lg:w-80  xl:w-100 m-1 h-50    "><img src="/shoes.jpg" className="float-right w-[50%] h-[90%] m-2 rounded-md " alt="" />
@@ -44,26 +44,26 @@ export default function Accules(){
 
 
         <div className="flex flex-col justify-center align-middle w-full  gap-6 ">
-            <div className="  w-[70%]  mx-auto min-w-md max-w-4xl   rounded-lg  mb-20 ">
+            <div className="  w-full  mx-auto min-w-md max-w-4xl   rounded-lg  mb-20 ">
                 <img src="/Screenshot 2025-03-03 151843.png" alt="Design Workspace" className="w-full h-70 rounded-md md:h-full md:w-1/2 md:float-right shrink-0 " />
                 <h2 className="text-2xl w-100 relative md:top-5 md:text-2xl lg:top-10 lg:text-4xl font-bold   ml-5">Custom Clothing</h2>
                 <p className=" text-gray-600 text-sm  relative md:top-2  lg:top-10 lg:text-xl  m-5 ">Design your perfect outfit with our bespoke clothing services, tailored to your exact preferences and measurements.</p>
              
             </div>
-            <div className="  w-[70%] md:flex  mx-auto min-w-md max-w-4xl    rounded-lg  mb-20   ">
-                <img src="/Screenshot 2025-03-03 155617.png" alt="Dress Form" className=" w-full h-70 rounded-md md:h-full md:w-1/2  shrink-0" />
-                <div className="md:w-1/2 " ><h2 className="text-2xl md:w-100 relative md:top-5  md:text-2xl lg:top-10 lg:text-4xl font-bold ml-5  ">Bespoke Shoes</h2>
-                <p className=" text-gray-600 text-sm  relative md:top-2  lg:top-10 lg:text-xl   m-5">Create your ideal pair of shoes, choosing from a variety of styles, materials, and colors to suit any occasion.</p>
+            <div className="w-full md:flex mx-auto max-w-4xl rounded-lg mb-20">
+                <img src="/Screenshot 2025-03-03 155617.png" alt="Dress Form" className="w-full h-70 rounded-md md:h-full md:w-1/2 shrink-0" />
+                <div className="md:w-1/2">
+                    <h2 className="text-2xl w-full relative md:top-5 md:text-2xl lg:top-10 lg:text-4xl font-bold ml-5">Bespoke Shoes</h2>
+                    <p className="text-gray-600 text-sm relative md:top-2 lg:top-10 lg:text-xl m-5">Create your ideal pair of shoes, choosing from a variety of styles, materials, and colors to suit any occasion.</p>
                 </div>
             </div>
-            <div className=" w-[70%]  mx-auto min-w-md max-w-4xl  bg-[#EEB866FF]  rounded-lg  mb-20 ">
-                <img src="/Screenshot 2025-03-03 164718.png" alt="Design Workspace" className=" w-full h-70 rounded-md md:h-full md:w-1/2 md:float-right shrink-0  " />
-                <h2 className="text-2xl w-100 relative md:top-5 md:text-2xl lg:text-4xl text-white font-bold   ml-5">Commission Your Dream Art</h2>
-                <p className=" text-sm  relative md:top-2  lg:top-10 lg:text-xl text-white m-5">Reach out to bring your unique vision to life with a custom piece. Our artist is eager to collaborate and create something special just for you.</p>
-             
-            </div> 
+            <div className="w-full mx-auto max-w-4xl bg-[#EEB866FF] rounded-lg mb-20">
+                <img src="/Screenshot 2025-03-03 164718.png" alt="Design Workspace" className="w-full h-70 rounded-md md:h-full md:w-1/2 md:float-right shrink-0" />
+                <h2 className="text-2xl w-full relative md:top-5 md:text-2xl lg:text-4xl text-white font-bold ml-5">Commission Your Dream Art</h2>
+                <p className="text-sm relative md:top-2 lg:top-10 lg:text-xl text-white m-5">Reach out to bring your unique vision to life with a custom piece. Our artist is eager to collaborate and create something special just for you.</p>
+            </div>
+        </div>
     </div>
- </div>
-  <Footer/>
-    </div>
+    <Footer/>
+</div>
 }

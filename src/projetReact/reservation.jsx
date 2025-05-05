@@ -40,7 +40,7 @@ const ReservationClient = () => {
             >
               annuler
             </button>}
-            {(r.etat=='done'|| r.etat=='canceled') ?'': <button
+            {(r.etat=='done'|| r.etat=='canceled' || r.etat=='refused') ?'': <button
             name="terminer"
               onClick={(e)=>dispatcher(updateEtat({etat:'done',id:r.id}))}
               className="bg-[#EEB866FF] text-white px-3 py-1 rounded"
@@ -53,7 +53,7 @@ const ReservationClient = () => {
 })}
 
       {reservations.length === 0 && (
-        <p className="text-center text-gray-500 mt-4">No reservations left.</p>
+        <p className="text-center text-gray-500 mt-4">No reservations </p>
       )}
     </div>
   );

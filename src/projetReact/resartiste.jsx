@@ -37,6 +37,11 @@ const ArtistNotifications = () => {
           </button></div>:<p className="text-gray-600 text-sm">{r.etat}</p>} 
         </div>
       })}
+
+{reservations.length === 0 && (
+        <p className="text-center text-gray-500 mt-4">No reservations </p>
+      )}
+
     </div>
     </>);
 };
