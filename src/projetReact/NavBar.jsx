@@ -21,8 +21,8 @@ export default function NavBar(){
     }
     return  <nav className="flex flex-col sm:flex-row gap-4 relative shadow-md bg-white z-10 w-full p-4 pb-0 mb-1 border-b border-neutral-200">
          <div className="flex items-center space-x-2">
-           <img src="logo.png" className="size-8 sm:size-10 rounded-lg shadow-sm" alt="" />
-           <h1 className="text-[20px] sm:text-[25px] text-[Gill Sans] mb-4 font-semibold text-gray-800">GetArt</h1>
+           <Link to={`/${iduser}`}><img src="/logo.jpg" className="size-8 sm:size-10 rounded-lg shadow-sm" alt="" /></Link>
+           <h1 className="text-[20px] sm:text-[25px] text-[Gill Sans]  font-semibold text-gray-800">GetArt</h1>
          </div>
          <ul className="flex flex-row gap-4 mt-2 md:ml-30" onClick={()=>{seturl(window.location.pathname)}}>
           <li className={`transition-all ease-out duration-300 hover:border-b-4 hover:text-[#EEB866FF] hover:font-bold ${(url=='/' || url==`/${undefined} ` ||url==`/${iduser}` )?'border-b-4 font-bold text-[#EEB866FF]':''} border-[#EEB866FF] text-center py-2`}><Link to={`/${iduser}`}>Accuel</Link></li>

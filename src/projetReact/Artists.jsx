@@ -66,8 +66,8 @@ export default function Artists(){
         <button onClick={()=>setrech(tag)} className=" rounded-r-md bg-[#EEB866FF] w-10 " ><MagnifyingGlassIcon className="size-5 m-auto " /></button></div>
     </div>
     
-    <div className="  mb-5 w-full sm:m-0  p-3   ">
-         <div className="grid   lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-3   space-y-4  justify-between  w-full  "  >
+    <div className={` ${(Artists.length<=4) ? 'h-112':''} mb-5 w-full sm:m-0  p-3   `}>
+         <div className="grid  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-3   space-y-4  justify-between  w-full  "  >
            {
             (Artists.length>0)?
             Artists.splice((nbpage-1)*8,8).map((artist,i)=>{
@@ -79,10 +79,11 @@ export default function Artists(){
            }
     </div> 
     </div>
-    <div className="flex justify-center mb-2 gap-3">
+    <div className={`${Artists.length<9?'hidden':''} flex justify-center mb-2 gap-3`}>
        <button name="<" onClick={(e)=>navhandler(e)} className="text-gray-600" >{'<'}</button> <p className="text-gray-600">{nbpage}</p> <button name=">" onClick={(e)=>navhandler(e)} className="text-gray-600" >{'>'}</button>
     </div>
-    <Footer/> 
+    <div className={``}><Footer/></div>
+     
     </div>
    
     </>

@@ -1,5 +1,5 @@
-import { Pencil } from "lucide-react";
-import { useParams } from "react-router-dom";
+import {  Pencil } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "./NavBar";
 import ReactStars from "react-rating-stars-component";
@@ -10,14 +10,14 @@ import { updateArtist ,addImg,getimages} from "./Action";
 export default function Profile(){
     const edited=useSelector(s=>s.edited)
     const dispatcher=useDispatch()
-        useEffect(()=>{
+    useEffect(()=>{
       dispatcher(getimages())
     },[edited])
-    const loading =useSelector(s=>s.loading)
     const {iduser}=useParams()
     const Users=useSelector(s=>s.users)
     const Reviews=useSelector(s=>s.reviews).filter(e=>e.idArtist==iduser)
     const imgs=useSelector(s=>s.images).filter(e=>e.idArtist==iduser)
+    console.log(imgs)
     const [Vinfo,setVinfo]=useState(false)
     const [Vservice,setVservice]=useState(false)
     const artistdata = new FormData()
@@ -27,27 +27,18 @@ export default function Profile(){
     const [primg,setprimg]=useState('')
     const [descimg,setimgdesc]=useState('')
     const [img,setimg]=useState()
+    images.append('idArtist',iduser)
+    images.append('image',img)
     artistdata.append('artist', JSON.stringify(editArtist));
-
+    artistdata.append('profilImg', primg);
+    artistdata.append('descImg', descimg);
     useEffect(()=>{
-      artistdata.append('profilImg', primg);
-      dispatcher(updateArtist(artistdata))
-    },[primg])
-
-      useEffect(()=>{
-      artistdata.append('descImg', descimg);
-      dispatcher(updateArtist(artistdata))
-    },[descimg])
-
-    useEffect(()=>{
-      images.append('idArtist',iduser)
-      images.append('image',img)
       dispatcher(addImg(images))
-    },[img])
+      dispatcher(updateArtist(artistdata))
+},[primg,descimg,img])
 
     const handeledit = () => {
       try {
-      
          dispatcher(updateArtist(artistdata));
         setVinfo(false);
         setVservice(false);
@@ -141,10 +132,10 @@ export default function Profile(){
       </div>
  
     </div>
-    <div className={`lg:flex ${(Vservice||Vinfo)?'blur-sm':''}  `}>
-      <div className="border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full lg:w-[50%] mx-2" >
+    <div className={`md:flex space-x-2 ${(Vservice||Vinfo)?'blur-sm':''}  `}>
+      <div className="  border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full ml-2     lg:w-[50%]    " >
       <button onClick={()=>setVinfo(!Vinfo)} className="float-right m-4 hover:cursor-pointer " ><Pencil size={20} color="black" /></button>
-        <div className="grid grid-cols-3 ">
+        <div className="grid grid-cols-3" >
             {(Artist['Profil_img'])?<div className={`relative top-4 left-5 md:left-5 xl:left-10  rounded-full xl:size-30 md:size-25 sm:size-20 size-20 float-left`}>
               <img className=" relative rounded-full" src={`${Artist.Profil_img}`} alt="" />
               <div  onClick={()=>{document.getElementById('primg').click()}} className="size-5 rounded-full flex justify-center items-center absolute right-1 top-3 bg-gray-200" >
@@ -180,7 +171,10 @@ export default function Profile(){
 
 
         <div className="m-4 mt-10 w-full ">
-            <h1 className=" font-bold mb-2 text-neutral-600  " >Reviews</h1>
+        <div className="flex justify-between" > 
+  <h1 className=" font-bold text-neutral-600 " >Reviews</h1> 
+  <Link className="m-4  text-[#EEB866FF]" to={`/detailArtist/${iduser}/user/${iduser}/AllReviews`}>see all {`>`}</Link>   
+  </div>
             <div className="grid grid-cols-2  gap-2 mr-20 " >
                 
                     {
@@ -202,7 +196,7 @@ export default function Profile(){
         </div>
       </div> 
 
-      <div className="border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full mt-2 lg:w-[50%] mx-2" >
+      <div className="   border-1 border-gray-200 shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md w-full mr-2   lg:w-[50%]     " >
           {(Artist.desc_img)?<div className={` bg-cover  relative w-full rounded-md h-70`} >
             <img className="w-full h-full rounded-md" src={`${Artist.desc_img}`} alt="" />
             <div onClick={()=>{document.getElementById("descimg").click()}} className="absolute top-1 right-1" >
@@ -220,18 +214,21 @@ export default function Profile(){
   </div> 
 
   <div className={`${(Vservice||Vinfo)?'blur-sm':''}`}> 
-  <h1 className="m-4 font-bold text-2xl text-neutral-900" >my work</h1>    
-  <div className="grid grid-cols-3 mb-6 gap-2 mx-2" >
+  <div className="flex justify-between" > 
+  <h1 className=" ml-2 mb-2 font-bold text-2xl text-neutral-900" >my work</h1> 
+  <Link className="mx-4  text-[#EEB866FF]" to={`/detailArtist/${iduser}/user/${iduser}/AllImages`}>see all {`>`}</Link>   
+  </div>
+  <div className="grid grid-rows-3 md:grid-rows-1  md:grid-cols-3 mb-6   gap-2 my-2 mx-6   " >
     {
      imgs.splice(0,2).map((e,i)=>{
      
-      return <div key={i} className={`shadow-[0px_1px_1px_rgba(0,0,0,0.25)] rounded-md`} ><img className="rounded-md h-60 w-full " src={`${e.img}`} alt="" /></div>
+      return <div key={i} className={`   shadow-[0px_1px_1px_rgba(0,0,0,0.25) rounded-md    `} ><img className="rounded-md h-60 w-full " src={`${e.img}`} alt="" /></div>
 
      })
     }
-  <div className={`shadow-[0px_1px_1px_rgba(0,0,0,0.25)] ${imgs.length==0?'h-60':''} rounded-md flex justify-center items-center`} >
-    <p className="absolute text-4xl" >+</p>
-    <input onChange={(e)=>setimg(e.target.files[0])} className={`bg-cover text-neutral-200 bg-neutral-200 w-full rounded-md h-full`} type="file" />
+  <div className={`  shadow-[0px_1px_1px_rgba(0,0,0,0.25) ${imgs.length==0?'h-60':''}  rounded-md flex justify-center items-center  `} >
+    <p className="absolute    text-4xl " >+</p>
+    <input onChange={(e)=>setimg(e.target.files[0])} className={` bg-cover text-neutral-200  bg-neutral-200 w-full rounded-md h-full`} type="file" />
     </div>
   </div>
   <Footer/> </div>
